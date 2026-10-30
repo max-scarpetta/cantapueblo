@@ -27,6 +27,13 @@
       <a href="#{{ day.id }}">{{ day.weekday[lang] }} {{ day.num }}</a>
       {%- endfor %}
     </nav>
+
+    <div class="audio-block edition-anthem glass">
+      <span class="edition-sub">{{ ui.anthem }}</span>
+      <audio controls preload="none">
+        <source src="{{ '/assets/audio/el-canto-grande.mp3' | relative_url }}" type="audio/mpeg">
+      </audio>
+    </div>
   </div>
 </section>
 

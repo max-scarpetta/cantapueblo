@@ -9,7 +9,10 @@
       <a href="{{ nav_data.edition2026 | relative_url }}" {% if page.section == 'edition2026' %}aria-current="page"{% endif %}>{{ nav_data.labels.edition2026 }}</a>
       <div class="nav-more" id="nav-more">
         <a href="{{ nav_data.history | relative_url }}" {% if page.section == 'history' %}aria-current="page"{% endif %}>{{ nav_data.labels.history }}</a>
+        {%- comment -%} Pestaña Programa oculta: el programa detallado está en la pestaña 2026. Para mostrarla de nuevo, borrá las dos líneas "comment" y "endcomment" que rodean el enlace de abajo, y sacá las 3 páginas de "exclude" en _config.yml. {%- endcomment -%}
+        {%- comment -%}
         <a href="{{ nav_data.programme | relative_url }}" {% if page.section == 'programme' %}aria-current="page"{% endif %}>{{ nav_data.labels.programme }}</a>
+        {%- endcomment %}
         <a href="{{ nav_data.team | relative_url }}" {% if page.section == 'team' %}aria-current="page"{% endif %}>{{ nav_data.labels.team }}</a>
         <a href="{{ nav_data.contact | relative_url }}" {% if page.section == 'contact' %}aria-current="page"{% endif %}>{{ nav_data.labels.contact }}</a>
       </div>

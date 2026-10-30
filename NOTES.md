@@ -86,6 +86,12 @@ Sin `figcaption` — se decidió no poner texto al pie de las fotos.
 
 ## Programa
 
+> **OCULTO desde el 30/10/2026.** El programa detallado de la edición vive en la pestaña
+> 2026 (`_data/edicion2026.yml`). Las 3 páginas siguen en el repo pero figuran en `exclude`
+> de `_config.yml` y el enlace de `_includes/nav.html` está comentado. El único lugar con el
+> reproductor del himno "El Canto Grande" era esta página. Para volver a mostrarla: borrar las
+> 3 líneas de `exclude` y descomentar el enlace en `nav.html`.
+
 `es/programa.html` / `en/programme.html` / `fr/programme.html` muestran
 el cronograma típico del festival (Concierto Bienvenida, Concierto de
 los Pueblos, etc.) — contenido real de la Propuesta para Coros 2026,

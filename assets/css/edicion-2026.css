@@ -180,6 +180,10 @@
   color: var(--accent);
 }
 
+/* Himno del festival */
+.edition-anthem { max-width: 36rem; margin-top: 2rem; }
+.edition-anthem .edition-sub { margin-bottom: 0.7rem; }
+
 /* Navegación interna por días */
 .edition-jump {
   display: flex;

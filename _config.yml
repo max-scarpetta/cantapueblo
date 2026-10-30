@@ -14,6 +14,11 @@ defaults:
 
 exclude:
   - NOTES.md
+  # Programa genérico oculto: el programa detallado vive en la pestaña 2026.
+  # Para volver a publicarlo, borrá estas 3 líneas (y reactivá el enlace en _includes/nav.html).
+  - es/programa.html
+  - en/programme.html
+  - fr/programme.html
   - README.md
   - Gemfile
   - Gemfile.lock
