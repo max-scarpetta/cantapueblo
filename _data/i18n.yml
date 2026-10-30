@@ -2,35 +2,41 @@ es:
   home: "/es/"
   history: "/es/historia.html"
   programme: "/es/programa.html"
+  edition2026: "/es/2026.html"
   team: "/es/quienes-somos.html"
   contact: "/es/contacto.html"
   labels:
     home: Inicio
     history: Historia
     programme: Programa
+    edition2026: "2026"
     team: Quiénes Somos
     contact: Contacto
 en:
   home: "/en/"
   history: "/en/history.html"
   programme: "/en/programme.html"
+  edition2026: "/en/2026.html"
   team: "/en/about.html"
   contact: "/en/contact.html"
   labels:
     home: Home
     history: History
     programme: Programme
+    edition2026: "2026"
     team: About Us
     contact: Contact
 fr:
   home: "/fr/"
   history: "/fr/histoire.html"
   programme: "/fr/programme.html"
+  edition2026: "/fr/2026.html"
   team: "/fr/qui-sommes-nous.html"
   contact: "/fr/contact.html"
   labels:
     home: Accueil
     history: Histoire
     programme: Programme
+    edition2026: "2026"
     team: Qui sommes-nous
     contact: Contact

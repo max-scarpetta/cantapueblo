@@ -1,0 +1,55 @@
+{%- comment -%}
+  Bloque de fotos y videos. Parámetros:
+    photos, videos  → listas de _data/edicion2026.yml
+    group           → id único para agrupar las fotos del visor
+    alt_base        → texto alternativo por defecto
+    ui              → textos de la interfaz en el idioma actual
+    show_empty      → "yes" para mostrar el aviso cuando no hay nada
+{%- endcomment -%}
+{%- assign lang = page.lang -%}
+{%- assign n_photos = include.photos | size -%}
+{%- assign n_videos = include.videos | size -%}
+
+{%- if n_photos > 0 %}
+<div class="edition-media">
+  <span class="edition-sub">{{ include.ui.photos }}</span>
+  <div class="edition-gallery">
+    {%- for photo in include.photos %}
+    {%- assign cap = photo.caption[lang] %}
+    {%- assign alt = cap | default: include.alt_base %}
+    <button type="button" class="edition-photo" data-group="{{ include.group }}"
+            data-src="{{ '/assets/img/2026/' | append: photo.file | relative_url }}"
+            data-alt="{{ alt | escape }}" data-caption="{{ cap | escape }}">
+      <img loading="lazy" src="{{ '/assets/img/2026/' | append: photo.file | relative_url }}" alt="{{ alt | escape }}">
+    </button>
+    {%- endfor %}
+  </div>
+</div>
+{%- endif %}
+
+{%- if n_videos > 0 %}
+<div class="edition-media">
+  <span class="edition-sub">{{ include.ui.videos }}</span>
+  <div class="edition-videos">
+    {%- for video in include.videos %}
+    {%- assign vtitle = video.title[lang] | default: include.alt_base %}
+    <figure class="edition-video">
+      {%- if video.youtube %}
+      <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/{{ video.youtube }}"
+              title="{{ vtitle | escape }}" referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+      {%- else %}
+      <video controls preload="metadata" playsinline src="{{ '/assets/video/2026/' | append: video.file | relative_url }}"></video>
+      {%- endif %}
+      {%- if video.title[lang] %}
+      <figcaption>{{ video.title[lang] }}</figcaption>
+      {%- endif %}
+    </figure>
+    {%- endfor %}
+  </div>
+</div>
+{%- endif %}
+
+{%- if n_photos == 0 and n_videos == 0 and include.show_empty == "yes" %}
+<p class="edition-empty">{{ include.ui.no_media }}</p>
+{%- endif %}

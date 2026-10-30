@@ -1,0 +1,338 @@
+/* Edición 2026 — registro del festival.
+   Depende de las variables y clases de style.css (.section, .section-feature, tint-*). */
+
+.edition-kicker {
+  display: block;
+  margin-bottom: 0.9rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--naranja);
+}
+.section p.edition-dates {
+  margin: 0 0 0.2rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+  line-height: 1.05;
+  color: var(--cian);
+}
+.section p.edition-place {
+  margin: 0 0 1.6rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+  color: var(--text-dim);
+}
+.section-inner > p.edition-dates,
+.section-inner > p.edition-place,
+.section-inner > p.edition-note { text-align: left; }
+.edition-note {
+  font-size: 0.82rem;
+  opacity: 0.8;
+}
+
+/* Un bloque por día, con su propio color */
+.edition-day { --accent: var(--cian); }
+.edition-day.tint-lima { --accent: var(--lima); }
+.edition-day.tint-naranja { --accent: var(--naranja); }
+.edition-day.tint-dorado { --accent: var(--dorado); }
+
+.edition-day-head {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.1rem;
+  margin-bottom: 2rem;
+}
+.edition-day-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(4rem, 11vw, 6.5rem);
+  line-height: 0.8;
+  color: var(--accent);
+  opacity: 0.9;
+}
+.edition-day-name h2 { margin: 0; font-size: 1.9rem; }
+.edition-day-name span {
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.edition-events {
+  list-style: none;
+  margin: 0 0 2.2rem;
+  padding: 0;
+}
+.edition-events > li {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 1rem;
+  padding: 1.8rem 0;
+  border-top: 1px solid var(--line-strong);
+}
+.edition-events > li:first-child { border-top: none; padding-top: 0; }
+.edition-time {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--accent);
+}
+.edition-event h3 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 0 0 0.35rem;
+  color: var(--ink);
+}
+.edition-event p { margin: 0.25rem 0 0; }
+.section .edition-subtitle { color: var(--text-dim); font-size: 1rem; }
+.section .edition-venue { color: var(--ink); font-size: 0.95rem; }
+.edition-venue span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+.section .edition-access {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+.section .edition-access.is-free { color: var(--accent); }
+.edition-access a { color: var(--ink); }
+.section .edition-note-inline { font-size: 0.88rem; font-style: italic; }
+
+.edition-lineup {
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.edition-lineup li {
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--accent);
+  line-height: 1.35;
+}
+.edition-lineup a {
+  color: var(--ink);
+  font-weight: 500;
+  text-decoration: none;
+}
+.edition-lineup a:hover { text-decoration: underline; }
+.edition-lineup span {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+
+/* Navegación interna por días */
+.edition-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.8rem;
+}
+.edition-jump a {
+  padding: 0.4rem 0.95rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--ink);
+  text-decoration: none;
+  background: var(--glass-bg);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.edition-jump a:hover { background: var(--glass-bg-strong); transform: translateY(-1px); }
+
+/* Los coros */
+.section-inner > .edition-choirs-intro,
+.edition-choirs .section-inner > p { text-align: left; }
+.edition-group-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 2.6rem 0 1rem;
+  font-size: 1.15rem;
+}
+.edition-group-title span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-dim);
+}
+.edition-choir-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+.edition-choir {
+  overflow: hidden;
+  scroll-margin-top: 110px;
+  display: flex;
+  flex-direction: column;
+}
+.edition-choir-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+.edition-choir-body { padding: 1.1rem 1.2rem 1.2rem; }
+.edition-choir h4 {
+  margin: 0 0 0.35rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.edition-choir-origin,
+.edition-choir-dir {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+.edition-choir-origin { color: var(--naranja); font-weight: 500; }
+
+/* Fotos y videos */
+.edition-media { margin-top: 1.8rem; }
+.edition-sub {
+  display: block;
+  margin-bottom: 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.edition-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+.edition-photo {
+  display: block;
+  padding: 0;
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: zoom-in;
+  background: var(--bg-alt);
+  aspect-ratio: 4 / 3;
+}
+.edition-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.edition-photo:hover img,
+.edition-photo:focus-visible img { transform: scale(1.05); }
+.edition-photo:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.edition-videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem;
+}
+.edition-video { margin: 0; }
+.edition-video iframe,
+.edition-video video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 14px;
+  background: #000;
+  display: block;
+}
+.edition-video figcaption {
+  padding-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.edition-empty {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  opacity: 0.85;
+}
+
+/* Visor de fotos a pantalla completa */
+.lightbox {
+  border: none;
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  max-height: 100vh;
+  background: rgba(10, 10, 9, 0.93);
+  color: #fdfcf9;
+}
+.lightbox[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.lightbox::backdrop { background: rgba(10, 10, 9, 0.93); }
+.lightbox-stage {
+  margin: 0;
+  max-width: min(1200px, 84vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lightbox-img {
+  max-width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.lightbox-stage figcaption {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 0.8rem;
+  font-size: 0.9rem;
+  color: rgba(253, 252, 249, 0.8);
+}
+.lightbox-count { white-space: nowrap; opacity: 0.7; }
+.lightbox-close,
+.lightbox-nav {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #fdfcf9;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  font-size: 1.8rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  transition: background 0.2s ease;
+}
+.lightbox-close:hover,
+.lightbox-nav:hover { background: rgba(255, 255, 255, 0.25); }
+.lightbox-close { position: absolute; top: 1rem; right: 1rem; }
+.lightbox-nav[hidden] { display: none; }
+
+@media (max-width: 720px) {
+  .edition-events > li { grid-template-columns: 3.4rem 1fr; gap: 0.7rem; }
+  .edition-choir-grid { grid-template-columns: 1fr; }
+  .edition-gallery { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+  .edition-videos { grid-template-columns: 1fr; }
+  .lightbox-stage { max-width: 100vw; }
+  .lightbox[open] { flex-wrap: wrap; align-content: center; }
+  .lightbox-nav { position: absolute; bottom: 1.2rem; }
+  .lightbox-prev { left: 1.2rem; }
+  .lightbox-next { right: 1.2rem; }
+}

@@ -1,0 +1,339 @@
+# =====================================================================
+# EDICIÓN 2026 (38.ª edición) — registro del festival, 11 al 14 de noviembre
+#
+# Este es el ÚNICO archivo que hay que tocar para completar la sección 2026.
+# Las páginas /es/2026.html, /en/2026.html y /fr/2026.html lo leen solas.
+#
+# FOTOS DE LOS COROS
+#   1. Subí la foto (.webp, ancho máx. 1600 px) a  assets/img/2026/coros/
+#   2. En el coro, agregá la línea:   photo: nacer-vocal.webp
+#
+# FOTOS DEL FESTIVAL (las que saque Flor), por día
+#   1. Subí la imagen a  assets/img/2026/
+#   2. En el día, reemplazá  photos: []  por:
+#
+#        photos:
+#          - file: dia13-alturas-01.webp
+#            caption:
+#              es: "Los coros al pie del Aconcagua"
+#              en: "The choirs at the foot of Aconcagua"
+#              fr: "Les chœurs au pied de l'Aconcagua"
+#
+#      (caption es opcional: si no lo querés, dejá solo "- file: ...")
+#
+# VIDEOS
+#   - De YouTube: copiá el código del link (youtube.com/watch?v=ESTE_CODIGO)
+#        videos:
+#          - youtube: AG4jC52Dxh0
+#            title: { es: "Concierto Final", en: "Final Concert", fr: "Concert final" }
+#   - Archivo propio (clips cortos, idealmente < 20 MB) en assets/video/2026/:
+#          - file: clip-cantata.mp4
+#
+# CAMBIAR UN CONCIERTO: horario (time), sede (venue), entradas (access:
+#   free | tickets, y ticket_url), o sumar/quitar coros (lista choirs con los
+#   "id" de la sección choirs de más abajo).
+#
+# RESUMEN FINAL: las fotos y videos de  highlights  (al fondo) aparecen como
+#   bloque "Lo mejor de la edición" recién cuando hay al menos uno.
+# =====================================================================
+
+ui:
+  es:
+    kicker: "Edición 38 · 2026"
+    title: "Cantapueblo 2026"
+    dates: "11 al 14 de noviembre"
+    place: "Mendoza, Argentina"
+    intro: "Cuatro jornadas de conciertos reúnen a coros de Mendoza, Tucumán, Neuquén, Chubut y Buenos Aires, junto a agrupaciones de Ecuador y México. En esta página se presenta el programa completo; las fotografías y los videos se incorporarán durante y después del festival."
+    note: "Programa publicado por la organización. Puede haber cambios: las novedades se anuncian en el Instagram de Cantapueblo."
+    jump_choirs: "Los coros"
+    choirs_title: "Los coros de 2026"
+    choirs_intro: "Estas son las agrupaciones corales que nos acompañan en la edición 2026."
+    group_exterior: "Internacionales"
+    group_provincias: "De Argentina"
+    group_mendoza: "De Mendoza"
+    conductor: "Dirección"
+    program_title: "Programa de conciertos"
+    month: "noviembre"
+    free: "Entrada libre y gratuita"
+    tickets: "Entradas por EntradaWeb"
+    buy: "Comprar entradas"
+    photos: "Fotos"
+    videos: "Videos"
+    no_media: "Las fotografías y los videos de esta jornada se incorporarán durante y después del festival."
+    highlights_title: "Lo mejor de la edición 2026"
+    close: "Cerrar"
+    prev: "Foto anterior"
+    next: "Foto siguiente"
+  en:
+    kicker: "38th Edition · 2026"
+    title: "Cantapueblo 2026"
+    dates: "November 11 to 14"
+    place: "Mendoza, Argentina"
+    intro: "Four days of concerts bring together choirs from Mendoza, Tucumán, Neuquén, Chubut and Buenos Aires, alongside ensembles from Ecuador and Mexico. This page presents the full festival programme; photographs and videos will be added during and after the festival."
+    note: "Programme published by the organization. Changes may occur: updates are announced on Cantapueblo's Instagram."
+    jump_choirs: "The choirs"
+    choirs_title: "The 2026 choirs"
+    choirs_intro: "These are the choral ensembles joining us for the 2026 edition."
+    group_exterior: "International"
+    group_provincias: "From Argentina"
+    group_mendoza: "From Mendoza"
+    conductor: "Conductor"
+    program_title: "Concert programme"
+    month: "November"
+    free: "Free admission"
+    tickets: "Tickets on EntradaWeb"
+    buy: "Buy tickets"
+    photos: "Photos"
+    videos: "Videos"
+    no_media: "Photographs and videos from this day will be added during and after the festival."
+    highlights_title: "Highlights of the 2026 edition"
+    close: "Close"
+    prev: "Previous photo"
+    next: "Next photo"
+  fr:
+    kicker: "38e édition · 2026"
+    title: "Cantapueblo 2026"
+    dates: "Du 11 au 14 novembre"
+    place: "Mendoza, Argentine"
+    intro: "Quatre jours de concerts réunissent des chœurs de Mendoza, Tucumán, Neuquén, Chubut et Buenos Aires, ainsi que des ensembles d'Équateur et du Mexique. Cette page présente le programme complet du festival ; les photographies et les vidéos y seront ajoutées pendant et après le festival."
+    note: "Programme publié par l'organisation. Des changements sont possibles : les nouveautés sont annoncées sur l'Instagram de Cantapueblo."
+    jump_choirs: "Les chœurs"
+    choirs_title: "Les chœurs de 2026"
+    choirs_intro: "Voici les ensembles vocaux qui nous accompagnent pour l'édition 2026."
+    group_exterior: "Internationaux"
+    group_provincias: "D'Argentine"
+    group_mendoza: "De Mendoza"
+    conductor: "Direction"
+    program_title: "Programme des concerts"
+    month: "novembre"
+    free: "Entrée libre et gratuite"
+    tickets: "Billets sur EntradaWeb"
+    buy: "Acheter des billets"
+    photos: "Photos"
+    videos: "Vidéos"
+    no_media: "Les photographies et les vidéos de cette journée seront ajoutées pendant et après le festival."
+    highlights_title: "Les temps forts de l'édition 2026"
+    close: "Fermer"
+    prev: "Photo précédente"
+    next: "Photo suivante"
+
+# De dónde viene cada coro (se usa en la ficha de cada coro)
+origins:
+  mendoza:       { es: "Mendoza", en: "Mendoza", fr: "Mendoza" }
+  malargue:      { es: "Malargüe, Mendoza", en: "Malargüe, Mendoza", fr: "Malargüe, Mendoza" }
+  las-heras:     { es: "Las Heras, Mendoza", en: "Las Heras, Mendoza", fr: "Las Heras, Mendoza" }
+  tucuman:       { es: "Tucumán", en: "Tucumán", fr: "Tucumán" }
+  neuquen:       { es: "Neuquén", en: "Neuquén", fr: "Neuquén" }
+  chubut:        { es: "Chubut", en: "Chubut", fr: "Chubut" }
+  buenos-aires:  { es: "Buenos Aires", en: "Buenos Aires", fr: "Buenos Aires" }
+  guayaquil:     { es: "Guayaquil, Ecuador", en: "Guayaquil, Ecuador", fr: "Guayaquil, Équateur" }
+  cancun:        { es: "Cancún, México", en: "Cancún, Mexico", fr: "Cancún, Mexique" }
+
+# group: exterior | provincias | mendoza   (define en qué bloque aparece)
+choirs:
+  # --- Desde el exterior ---
+  - id: efren-jurado
+    group: exterior
+    name: "Coro Adultos Mayores IESS \"Efrén Jurado\""
+    origin: guayaquil
+    director: "Carlos Villacres Velástegui"
+  - id: vozeres
+    group: exterior
+    name: "Vózeres Ensamble Vocal"
+    origin: cancun
+    director: "Edgard Gonzáles Salzmann"
+  # --- Desde otras provincias ---
+  - id: canto-vida-tucuman
+    group: provincias
+    name: "Coro Canto a la Vida"
+    origin: tucuman
+    director: "Guillermo Solito"
+  - id: nacer-vocal
+    group: provincias
+    name: "Coro Polifónico Municipal Nacer Vocal"
+    origin: buenos-aires
+    director: "Martín Grau"
+  - id: abogados-neuquen
+    group: provincias
+    name: "Coro del Colegio de Abogados y Procuradores del Neuquén"
+    origin: neuquen
+    director: "Israel Matamala"
+  - id: aluen
+    group: provincias
+    name: "Vocal Femenino Aluen"
+    origin: chubut
+    director: "Tania Salgado Nievas"
+  # --- De Mendoza ---
+  - id: camara-uncuyo
+    group: mendoza
+    name: "Coro de Cámara UNCUYO"
+    origin: mendoza
+    director: "Diego Martín"
+  - id: amicana
+    group: mendoza
+    name: "Coro Amicana"
+    origin: mendoza
+    director: "Simón Abecasis"
+  - id: ninos-jovenes-uncuyo
+    group: mendoza
+    name: "Coro Niños y Jóvenes UNCUYO"
+    origin: mendoza
+    director: "Ángela Burgoa"
+  - id: jaboneria
+    group: mendoza
+    name: "Grupo Vocal La Jabonería de Vieytes"
+    origin: mendoza
+    director: "Santiago Luna"
+  - id: ciudad-mendoza
+    group: mendoza
+    name: "Coro de la Ciudad de Mendoza"
+    origin: mendoza
+    director: "Eleonora Fernández"
+  - id: cantapueblo
+    group: mendoza
+    name: "Coro Cantapueblo"
+    origin: mendoza
+    director: "Nancy Ciccioli"
+  - id: esloveno
+    group: mendoza
+    name: "Coro Esloveno de Mendoza"
+    origin: mendoza
+    director: "Diego Bosquet"
+  - id: colegio-central
+    group: mendoza
+    name: "Coro del Colegio Universitario Central"
+    origin: mendoza
+    director: "Alejandra Marengo"
+  - id: nn-vocal
+    group: mendoza
+    name: "NN Vocal"
+    origin: mendoza
+    director: "Cecilia de Borbón"
+  - id: torrontes
+    group: mendoza
+    name: "Coro Torrontes del Hospital Universitario"
+    origin: mendoza
+    director: "Mariana Ledda"
+  - id: canto-coral-argentino
+    group: mendoza
+    name: "Canto Coral Argentino"
+    origin: mendoza
+    director: "Alejandro Scarpetta"
+  - id: universidad-aconcagua
+    group: mendoza
+    name: "Coro de la Universidad del Aconcagua"
+    origin: mendoza
+    director: "Ricardo Portillo"
+  - id: julian-aguirre
+    group: mendoza
+    name: "Coro Escuela Artística Julián Aguirre"
+    origin: mendoza
+    director: "Valentino Landeta"
+  - id: osep
+    group: mendoza
+    name: "Coro OSEP"
+    origin: mendoza
+    director: "Andrés Iacopini"
+  - id: ninos-malargue
+    group: mendoza
+    name: "Coro de Niños de la Municipalidad de Malargüe"
+    origin: malargue
+    director: "Juan Pablo Cabrera"
+  - id: hugo-cabrera
+    group: mendoza
+    name: "Coro \"Hugo Cabrera\" de la Municipalidad de Malargüe"
+    origin: malargue
+    director: "Juan Pablo Cabrera"
+  - id: canto-vida-mendoza
+    group: mendoza
+    name: "Coro Canto a la Vida"
+    origin: mendoza
+    director: "Dante Ochoa"
+  - id: adultos-mayores-las-heras
+    group: mendoza
+    name: "Coro Adultos Mayores de la Municipalidad de Las Heras"
+    origin: las-heras
+    director: "Pablo Tapia"
+
+days:
+  - id: dia11
+    num: 11
+    weekday: { es: "Miércoles", en: "Wednesday", fr: "Mercredi" }
+    events:
+      - time: "21:00"
+        title: { es: "Concierto Apertura", en: "Opening Concert", fr: "Concert d'ouverture" }
+        venue: { name: "Nave UNCUYO", address: "Maza y Av. España, Ciudad" }
+        access: tickets
+        choirs: [camara-uncuyo, amicana, ninos-jovenes-uncuyo, vozeres]
+    photos: []
+    videos: []
+
+  - id: dia12
+    num: 12
+    weekday: { es: "Jueves", en: "Thursday", fr: "Jeudi" }
+    events:
+      - time: "21:00"
+        title: { es: "Concierto de los Pueblos", en: "Concert of the Peoples", fr: "Concert des Peuples" }
+        venue: { name: "Espacio Cultural Julio Le Parc", room: "Sala Vilma Rupolo", address: "Av. Mitre esq. Godoy Cruz, Guaymallén" }
+        access: tickets
+        choirs: [efren-jurado, jaboneria, vozeres, ciudad-mendoza, cantapueblo]
+      - time: "21:00"
+        title: { es: "Concierto por la Vida", en: "Concert for Life", fr: "Concert pour la Vie" }
+        venue: { name: "Espacio Cultural Julio Le Parc", room: "Sala Tito Francia", address: "Av. Mitre esq. Godoy Cruz, Guaymallén" }
+        access: tickets
+        choirs: [abogados-neuquen, esloveno, aluen, colegio-central]
+      - time: "21:00"
+        title: { es: "Concierto por la Esperanza", en: "Concert for Hope", fr: "Concert pour l'Espoir" }
+        access: free
+        choirs: [canto-vida-tucuman, nn-vocal, nacer-vocal, torrontes]
+    photos: []
+    videos: []
+
+  - id: dia13
+    num: 13
+    weekday: { es: "Viernes", en: "Friday", fr: "Vendredi" }
+    events:
+      - time: "12:30"
+        title: { es: "Concierto en las Alturas", en: "Concert in the Heights", fr: "Concert dans les Hauteurs" }
+        subtitle: { es: "Los coros cantan al pie del Aconcagua", en: "The choirs sing at the foot of Aconcagua", fr: "Les chœurs chantent au pied de l'Aconcagua" }
+        choirs: [canto-vida-tucuman, efren-jurado, aluen, abogados-neuquen, nacer-vocal, vozeres]
+      - time: "21:00"
+        title: { es: "Concierto por la Paz", en: "Concert for Peace", fr: "Concert pour la Paix" }
+        venue: { name: "Teatro Independencia", address: "Chile y Espejo, Ciudad" }
+        access: tickets
+        ticket_url: "https://www.entradaweb.com.ar/evento/ed5b1d9e/step/1"
+        choirs: [aluen, canto-coral-argentino, abogados-neuquen, vozeres, universidad-aconcagua]
+      - time: "21:00"
+        title: { es: "Concierto por la Democracia", en: "Concert for Democracy", fr: "Concert pour la Démocratie" }
+        venue: { name: "Espacio Cultural Julio Le Parc", room: "Sala Armando Tejada Gómez", address: "Av. Mitre esq. Godoy Cruz, Guaymallén" }
+        access: tickets
+        choirs: [nacer-vocal, julian-aguirre, osep, ninos-malargue, hugo-cabrera]
+      - time: "21:00"
+        title: { es: "El Canto de los Grandes", en: "El Canto de los Grandes", fr: "El Canto de los Grandes" }
+        venue: { name: "Auditorio Dr. Gustavo Kent, Hospital Universitario", address: "Paso de los Andes 3051, Ciudad" }
+        access: tickets
+        ticket_url: "https://www.entradaweb.com.ar/evento/c34b97f3/step/1"
+        note: { es: "Lo recaudado es a total beneficio de la Cooperadora del Hospital Universitario.", en: "All proceeds go to the Hospital Universitario's Cooperadora (support association).", fr: "Les recettes sont intégralement reversées à la Cooperadora de l'Hôpital Universitaire." }
+        choirs: [canto-vida-mendoza, canto-vida-tucuman, efren-jurado, adultos-mayores-las-heras]
+    photos: []
+    videos: []
+
+  - id: dia14
+    num: 14
+    weekday: { es: "Sábado", en: "Saturday", fr: "Samedi" }
+    events:
+      - time: "12:00"
+        title: { es: "Cantata Callejera", en: "Street Cantata", fr: "Cantate de rue" }
+        subtitle: { es: "Los coros cantan en distintos espacios del centro de la ciudad de Mendoza", en: "The choirs sing in different spaces across downtown Mendoza", fr: "Les chœurs chantent dans différents lieux du centre-ville de Mendoza" }
+      - time: "21:00"
+        title: { es: "Concierto Final", en: "Final Concert", fr: "Concert final" }
+        venue: { name: "Iglesia de los Jesuitas", address: "Colón y San Martín, Ciudad" }
+        access: free
+        note: { es: "Participan coros de Argentina, Ecuador y México.", en: "Choirs from Argentina, Ecuador and Mexico take part.", fr: "Des chœurs d'Argentine, d'Équateur et du Mexique y participent." }
+    photos: []
+    videos: []
+
+# Resumen de toda la edición (opcional). Mismo formato que los días.
+highlights:
+  photos: []
+  videos: []
