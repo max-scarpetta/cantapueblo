@@ -92,6 +92,8 @@
           <p class="edition-access is-free">{{ ui.free }}</p>
           {%- elsif ev.access == "tickets" %}
           <p class="edition-access">{{ ui.tickets }}{% if ev.ticket_url %} · <a href="{{ ev.ticket_url }}" target="_blank" rel="noopener">{{ ui.buy }}</a>{% endif %}</p>
+          {%- elsif ev.access == "hospital" %}
+          <p class="edition-access">{{ ui.tickets_hospital }}</p>
           {%- endif %}
           {%- if ev.note %}<p class="edition-note-inline">{{ ev.note[lang] }}</p>{% endif %}
           {%- if ev.choirs %}
@@ -101,6 +103,32 @@
             <li><a href="#coro-{{ c.id }}">{{ c.name }}</a> <span>{{ ed.origins[c.origin][lang] }} · {{ c.director }}</span></li>
             {%- endfor %}
           </ul>
+          {%- endif %}
+          {%- if ev.segments %}
+          {%- for seg in ev.segments %}
+          <div class="edition-segment">
+            {%- if seg.title %}<h4 class="edition-segment-title">{{ seg.title[lang] }}</h4>{% endif %}
+            {%- if seg.choirs %}
+            <ul class="edition-lineup">
+              {%- for cid in seg.choirs %}
+              {%- assign c = ed.choirs | where: "id", cid | first %}
+              <li><a href="#coro-{{ c.id }}">{{ c.name }}</a> <span>{{ ed.origins[c.origin][lang] }} · {{ c.director }}</span></li>
+              {%- endfor %}
+            </ul>
+            {%- endif %}
+            {%- if seg.songs %}
+            <ul class="edition-songs">
+              {%- for song in seg.songs %}
+              <li>
+                {%- if song.label %}<span class="edition-song-label">{{ song.label[lang] }}</span>{% endif %}
+                <strong>“{{ song.title }}”</strong>
+                {%- if song.by %}<span>{{ song.by[lang] }}</span>{% endif %}
+              </li>
+              {%- endfor %}
+            </ul>
+            {%- endif %}
+          </div>
+          {%- endfor %}
           {%- endif %}
         </div>
       </li>

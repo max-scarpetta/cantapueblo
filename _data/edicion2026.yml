@@ -5,7 +5,7 @@
 # Las páginas /es/2026.html, /en/2026.html y /fr/2026.html lo leen solas.
 #
 # FOTOS DE LOS COROS
-#   1. Subí la foto (.webp, ancho máx. 1600 px) a  assets/img/2026/coros/
+#   1. Subí la foto (.webp) a  assets/img/2026/coros/  — recorte horizontal 2:1 (ej. 960×480 px)
 #   2. En el coro, agregá la línea:   photo: nacer-vocal.webp
 #
 # FOTOS DEL FESTIVAL (las que saque Flor), por día
@@ -30,7 +30,7 @@
 #          - file: clip-cantata.mp4
 #
 # CAMBIAR UN CONCIERTO: horario (time), sede (venue), entradas (access:
-#   free | tickets, y ticket_url), o sumar/quitar coros (lista choirs con los
+#   free | tickets | hospital, y ticket_url), o sumar/quitar coros (lista choirs con los
 #   "id" de la sección choirs de más abajo).
 #
 # RESUMEN FINAL: las fotos y videos de  highlights  (al fondo) aparecen como
@@ -44,18 +44,19 @@ ui:
     dates: "11 al 14 de noviembre"
     place: "Mendoza, Argentina"
     intro: "Cuatro jornadas de conciertos reúnen a coros de Mendoza, Tucumán, Neuquén, Chubut y Buenos Aires, junto a agrupaciones de Ecuador y México. En esta página se presenta el programa completo; las fotografías y los videos se incorporarán durante y después del festival."
-    note: "Programa publicado por la organización. Puede haber cambios: las novedades se anuncian en el Instagram de Cantapueblo."
+    note: "Programa publicado por la organización: las novedades se anuncian en el <a href=\"https://www.instagram.com/cantapuebloargentina/\" target=\"_blank\" rel=\"noopener\">Instagram de Cantapueblo</a>."
     jump_choirs: "Los coros"
     choirs_title: "Los coros de 2026"
     choirs_intro: "Estas son las agrupaciones corales que nos acompañan en la edición 2026."
     group_exterior: "Internacionales"
-    group_provincias: "De Argentina"
+    group_provincias: "De otras provincias de Argentina"
     group_mendoza: "De Mendoza"
     conductor: "Dirección"
     program_title: "Programa de conciertos"
     month: "noviembre"
     free: "Entrada libre y gratuita"
     tickets: "Entradas por EntradaWeb"
+    tickets_hospital: "Entradas a la venta directamente en el Hospital Universitario"
     buy: "Comprar entradas"
     photos: "Fotos"
     videos: "Videos"
@@ -70,18 +71,19 @@ ui:
     dates: "November 11 to 14"
     place: "Mendoza, Argentina"
     intro: "Four days of concerts bring together choirs from Mendoza, Tucumán, Neuquén, Chubut and Buenos Aires, alongside ensembles from Ecuador and Mexico. This page presents the full festival programme; photographs and videos will be added during and after the festival."
-    note: "Programme published by the organization. Changes may occur: updates are announced on Cantapueblo's Instagram."
+    note: "Programme published by the organization: updates are announced on <a href=\"https://www.instagram.com/cantapuebloargentina/\" target=\"_blank\" rel=\"noopener\">Cantapueblo's Instagram</a>."
     jump_choirs: "The choirs"
     choirs_title: "The 2026 choirs"
     choirs_intro: "These are the choral ensembles joining us for the 2026 edition."
     group_exterior: "International"
-    group_provincias: "From Argentina"
+    group_provincias: "From other provinces of Argentina"
     group_mendoza: "From Mendoza"
     conductor: "Conductor"
     program_title: "Concert programme"
     month: "November"
     free: "Free admission"
     tickets: "Tickets on EntradaWeb"
+    tickets_hospital: "Tickets sold directly by the Hospital Universitario"
     buy: "Buy tickets"
     photos: "Photos"
     videos: "Videos"
@@ -96,18 +98,19 @@ ui:
     dates: "Du 11 au 14 novembre"
     place: "Mendoza, Argentine"
     intro: "Quatre jours de concerts réunissent des chœurs de Mendoza, Tucumán, Neuquén, Chubut et Buenos Aires, ainsi que des ensembles d'Équateur et du Mexique. Cette page présente le programme complet du festival ; les photographies et les vidéos y seront ajoutées pendant et après le festival."
-    note: "Programme publié par l'organisation. Des changements sont possibles : les nouveautés sont annoncées sur l'Instagram de Cantapueblo."
+    note: "Programme publié par l'organisation&nbsp;: les nouveautés sont annoncées sur l'<a href=\"https://www.instagram.com/cantapuebloargentina/\" target=\"_blank\" rel=\"noopener\">Instagram de Cantapueblo</a>."
     jump_choirs: "Les chœurs"
     choirs_title: "Les chœurs de 2026"
     choirs_intro: "Voici les ensembles vocaux qui nous accompagnent pour l'édition 2026."
     group_exterior: "Internationaux"
-    group_provincias: "D'Argentine"
+    group_provincias: "D'autres provinces d'Argentine"
     group_mendoza: "De Mendoza"
     conductor: "Direction"
     program_title: "Programme des concerts"
     month: "novembre"
     free: "Entrée libre et gratuite"
     tickets: "Billets sur EntradaWeb"
+    tickets_hospital: "Billets vendus directement par l'Hôpital Universitaire"
     buy: "Acheter des billets"
     photos: "Photos"
     videos: "Vidéos"
@@ -137,32 +140,38 @@ choirs:
     name: "Coro Adultos Mayores IESS \"Efrén Jurado\""
     origin: guayaquil
     director: "Carlos Villacres Velástegui"
+    photo: efren-jurado.webp
   - id: vozeres
     group: exterior
     name: "Vózeres Ensamble Vocal"
     origin: cancun
-    director: "Edgard Gonzáles Salzmann"
+    director: "Edgard González Salzmann"
+    photo: vozeres.webp
   # --- Desde otras provincias ---
   - id: canto-vida-tucuman
     group: provincias
     name: "Coro Canto a la Vida"
     origin: tucuman
     director: "Guillermo Solito"
+    photo: canto-vida-tucuman.webp
   - id: nacer-vocal
     group: provincias
     name: "Coro Polifónico Municipal Nacer Vocal"
     origin: buenos-aires
     director: "Martín Grau"
+    photo: nacer-vocal.webp
   - id: abogados-neuquen
     group: provincias
     name: "Coro del Colegio de Abogados y Procuradores del Neuquén"
     origin: neuquen
     director: "Israel Matamala"
+    photo: abogados-neuquen.webp
   - id: aluen
     group: provincias
     name: "Vocal Femenino Aluen"
     origin: chubut
     director: "Tania Salgado Nievas"
+    photo: aluen.webp
   # --- De Mendoza ---
   - id: camara-uncuyo
     group: mendoza
@@ -192,6 +201,11 @@ choirs:
   - id: cantapueblo
     group: mendoza
     name: "Coro Cantapueblo"
+    origin: mendoza
+    director: "Nancy Ciccioli"
+  - id: akys
+    group: mendoza
+    name: "Coro Akys"
     origin: mendoza
     director: "Nancy Ciccioli"
   - id: esloveno
@@ -284,6 +298,7 @@ days:
         choirs: [abogados-neuquen, esloveno, aluen, colegio-central]
       - time: "21:00"
         title: { es: "Concierto por la Esperanza", en: "Concert for Hope", fr: "Concert pour l'Espoir" }
+        venue: { name: "Iglesia de Jesucristo de los Santos de los Últimos Días", address: "Francisco de la Reta 394, San José, Guaymallén" }
         access: free
         choirs: [canto-vida-tucuman, nn-vocal, nacer-vocal, torrontes]
     photos: []
@@ -311,8 +326,7 @@ days:
       - time: "21:00"
         title: { es: "El Canto de los Grandes", en: "El Canto de los Grandes", fr: "El Canto de los Grandes" }
         venue: { name: "Auditorio Dr. Gustavo Kent, Hospital Universitario", address: "Paso de los Andes 3051, Ciudad" }
-        access: tickets
-        ticket_url: "https://www.entradaweb.com.ar/evento/c34b97f3/step/1"
+        access: hospital
         note: { es: "Lo recaudado es a total beneficio de la Cooperadora del Hospital Universitario.", en: "All proceeds go to the Hospital Universitario's Cooperadora (support association).", fr: "Les recettes sont intégralement reversées à la Cooperadora de l'Hôpital Universitaire." }
         choirs: [canto-vida-mendoza, canto-vida-tucuman, efren-jurado, adultos-mayores-las-heras]
     photos: []
@@ -330,6 +344,25 @@ days:
         venue: { name: "Iglesia de los Jesuitas", address: "Colón y San Martín, Ciudad" }
         access: free
         note: { es: "Participan coros de Argentina, Ecuador y México.", en: "Choirs from Argentina, Ecuador and Mexico take part.", fr: "Des chœurs d'Argentine, d'Équateur et du Mexique y participent." }
+        # Programa del concierto, en orden. Cada bloque puede tener coros (lista de ids)
+        # y canciones (title, label opcional, by opcional).
+        segments:
+          - title: { es: "Coros solistas · una canción por coro", en: "Solo choirs · one song each", fr: "Chœurs solistes · une chanson par chœur" }
+            choirs: [canto-vida-mendoza, akys, canto-vida-tucuman, adultos-mayores-las-heras, efren-jurado]
+            songs:
+              - label: { es: "Todos cantan", en: "All sing", fr: "Tous chantent" }
+                title: "Anhelo"
+                by: { es: "Dirige Carlos Villacres Velástegui, director de los coros de adultos mayores (Ecuador)", en: "Conducted by Carlos Villacres Velástegui, director of the older adults' choirs (Ecuador)", fr: "Sous la direction de Carlos Villacres Velástegui, directeur des chœurs d'adultes âgés (Équateur)" }
+          - title: { es: "Coros solistas · una canción por coro", en: "Solo choirs · one song each", fr: "Chœurs solistes · une chanson par chœur" }
+            choirs: [ninos-malargue, aluen, canto-coral-argentino, abogados-neuquen, hugo-cabrera, nacer-vocal, cantapueblo, vozeres]
+          - title: { es: "Canciones de masa coral", en: "Mass choir songs", fr: "Chants d'ensemble" }
+            songs:
+              - title: "El jilguerillo"
+                by: { es: "Dirige Edgard González Salzmann (México)", en: "Conducted by Edgard González Salzmann (Mexico)", fr: "Sous la direction d'Edgard González Salzmann (Mexique)" }
+              - title: "Los ojos del amor"
+                by: { es: "Dirige Nancy Ciccioli (Mendoza)", en: "Conducted by Nancy Ciccioli (Mendoza)", fr: "Sous la direction de Nancy Ciccioli (Mendoza)" }
+              - title: "Canción con todos"
+                by: { es: "Dirige Nancy Ciccioli (Mendoza)", en: "Conducted by Nancy Ciccioli (Mendoza)", fr: "Sous la direction de Nancy Ciccioli (Mendoza)" }
     photos: []
     videos: []
 

@@ -1,6 +1,6 @@
 # Cantapueblo
 
-Sitio web de Cantapueblo — La Fiesta Coral de América, un encuentro coral
+Sitio web de Cantapueblo — La Fiesta Coral de Latinoamérica, un encuentro coral
 internacional en Mendoza, Argentina, desde 1989.
 
 **Sitio en vivo:** https://mxscvz.github.io/cantapueblo/

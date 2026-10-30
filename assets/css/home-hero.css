@@ -10,7 +10,7 @@
 .hero-on-photo h1 {
   max-width: none;
   white-space: nowrap;
-  font-size: clamp(1.9rem, 4.8vw, 5.2rem);
+  font-size: clamp(1.9rem, 3.9vw, 4.6rem);
 }
 .hero-on-photo .tagline {
   max-width: none;
@@ -24,11 +24,11 @@
   .hero-on-photo h1 {
     white-space: normal;
     max-width: 18ch;
-    font-size: 2.8rem;
+    font-size: 2.4rem;
   }
   .hero-on-photo .tagline {
     white-space: normal;
     max-width: 46ch;
-    font-size: 1.2rem;
+    font-size: 1.05rem;
   }
 }

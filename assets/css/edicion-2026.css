@@ -32,6 +32,12 @@
   font-size: 0.82rem;
   opacity: 0.8;
 }
+.edition-note a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.edition-note a:hover { color: var(--ink); }
 
 /* Un bloque por día, con su propio color */
 .edition-day { --accent: var(--cian); }
@@ -128,6 +134,52 @@
   color: var(--text-dim);
 }
 
+/* Programa por bloques (Concierto Final) */
+.edition-segment { margin-top: 1.6rem; }
+.edition-segment + .edition-segment { margin-top: 1.8rem; }
+.edition-segment-title {
+  margin: 0 0 0.2rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.edition-segment .edition-lineup { margin-top: 0.7rem; }
+.edition-songs {
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.edition-songs li {
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--accent);
+  line-height: 1.35;
+}
+.edition-songs strong {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+.edition-songs span {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+.edition-songs .edition-song-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
 /* Navegación interna por días */
 .edition-jump {
   display: flex;
@@ -176,7 +228,7 @@
 }
 .edition-choir-photo {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 2 / 1;
   object-fit: cover;
   display: block;
 }

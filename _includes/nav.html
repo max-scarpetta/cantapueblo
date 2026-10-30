@@ -4,13 +4,15 @@
     <a class="logo-link" href="{{ nav_data.home | relative_url }}">
       <img src="{{ '/assets/img/logo.png' | relative_url }}" alt="Cantapueblo 2027">
     </a>
-    <nav class="main-nav">
+    <nav class="main-nav" id="main-nav">
       <a href="{{ nav_data.home | relative_url }}" {% if page.section == 'home' %}aria-current="page"{% endif %}>{{ nav_data.labels.home }}</a>
       <a href="{{ nav_data.edition2026 | relative_url }}" {% if page.section == 'edition2026' %}aria-current="page"{% endif %}>{{ nav_data.labels.edition2026 }}</a>
-      <a href="{{ nav_data.history | relative_url }}" {% if page.section == 'history' %}aria-current="page"{% endif %}>{{ nav_data.labels.history }}</a>
-      <a href="{{ nav_data.programme | relative_url }}" {% if page.section == 'programme' %}aria-current="page"{% endif %}>{{ nav_data.labels.programme }}</a>
-      <a href="{{ nav_data.team | relative_url }}" {% if page.section == 'team' %}aria-current="page"{% endif %}>{{ nav_data.labels.team }}</a>
-      <a href="{{ nav_data.contact | relative_url }}" {% if page.section == 'contact' %}aria-current="page"{% endif %}>{{ nav_data.labels.contact }}</a>
+      <div class="nav-more" id="nav-more">
+        <a href="{{ nav_data.history | relative_url }}" {% if page.section == 'history' %}aria-current="page"{% endif %}>{{ nav_data.labels.history }}</a>
+        <a href="{{ nav_data.programme | relative_url }}" {% if page.section == 'programme' %}aria-current="page"{% endif %}>{{ nav_data.labels.programme }}</a>
+        <a href="{{ nav_data.team | relative_url }}" {% if page.section == 'team' %}aria-current="page"{% endif %}>{{ nav_data.labels.team }}</a>
+        <a href="{{ nav_data.contact | relative_url }}" {% if page.section == 'contact' %}aria-current="page"{% endif %}>{{ nav_data.labels.contact }}</a>
+      </div>
     </nav>
     <div class="lang-switch">
       {% for lang_entry in site.data.i18n %}
@@ -23,5 +25,8 @@
         {% endif %}
       {% endfor %}
     </div>
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="nav-more" aria-label="Menu" hidden>
+      <span class="menu-toggle-bars" aria-hidden="true"></span>
+    </button>
   </div>
 </header>

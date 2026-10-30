@@ -1,0 +1,152 @@
+/* Ajustes para celular.
+   Se carga después de style.css (ver _layouts/default.html) y solo actúa en pantallas
+   de hasta 720 px (texto y mapa) y hasta 960 px (header con menú desplegable).
+   En escritorio todos los enlaces siguen en una sola fila. */
+
+/* ---------- Menú: base (todas las pantallas) ---------- */
+.nav-more { display: contents; }
+.menu-toggle { display: none; }
+
+/* ---------- Header compacto con menú ----------
+   Con los 6 enlaces + idiomas el header ya no entra en menos de ~960 px
+   (tablets y ventanas angostas), así que el modo compacto empieza ahí. */
+@media (max-width: 960px) {
+  /* ---------- Header ---------- */
+  .header-inner {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.6rem;
+    padding: 0.7rem 1rem 0.6rem;
+  }
+  .site-header.scrolled .header-inner { padding: 0.45rem 1rem; }
+  .logo-link img { height: 52px; }
+  .site-header.scrolled .logo-link img { height: 34px; }
+
+  .lang-switch { order: 2; margin-left: auto; gap: 0.3rem; }
+  .lang-switch a, .lang-switch .lang-current {
+    font-size: 0.78rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  /* Segunda fila: solo Inicio y 2026. Historia → Contacto van en el desplegable */
+  .main-nav {
+    order: 4;
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow: visible;
+    gap: 0.3rem 1.5rem;
+    padding: 0;
+  }
+  .main-nav a { font-size: 0.82rem; letter-spacing: 0.07em; }
+  .site-header.scrolled .main-nav { display: none; }
+
+  /* ---------- Botón del menú ---------- */
+  .menu-toggle[hidden] { display: none; }
+  .menu-toggle {
+    order: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    background: var(--ink);
+    cursor: pointer;
+    flex: 0 0 auto;
+    transition: background 0.2s ease;
+  }
+  .menu-toggle-bars,
+  .menu-toggle-bars::before {
+    display: block;
+    width: 16px;
+    height: 1.5px;
+    background: #fdfcf9;
+    border-radius: 2px;
+    transition: transform 0.25s ease, background 0.2s ease;
+  }
+  .menu-toggle-bars { position: relative; transform: translateY(-3px); }
+  .menu-toggle-bars::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+  }
+  .menu-open .menu-toggle { background: transparent; }
+  .menu-open .menu-toggle-bars { transform: rotate(45deg); background: var(--ink); }
+  .menu-open .menu-toggle-bars::before { transform: translateY(-6px) rotate(-90deg); background: var(--ink); }
+
+  /* ---------- Desplegable: Historia → Contacto ---------- */
+  .has-menu .nav-more {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 0.4rem 1rem 0.9rem;
+    background: rgba(253, 252, 249, 0.98);
+    border-bottom: 1px solid var(--line-strong);
+    box-shadow: 0 18px 30px rgba(26, 26, 26, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
+  }
+  .has-menu.menu-open .nav-more {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .has-menu .nav-more a {
+    padding: 0.85rem 0;
+    font-size: 0.98rem;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .has-menu .nav-more a:last-child { border-bottom: none; }
+  .has-menu .nav-more a[aria-current="page"] {
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 0.85rem;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .has-menu .nav-more a[aria-current="page"]:last-child { border-bottom: none; }
+
+  /* Con el menú abierto el header no se achica de golpe */
+  .site-header.scrolled.menu-open .main-nav { display: flex; }
+}
+
+@media (max-width: 720px) {
+
+  /* ---------- Escala de texto ----------
+     Todos los tamaños del sitio están en rem, así que al achicar la base se achica
+     todo en proporción. A 390 px de ancho: base 14 px y texto de lectura de 16 px,
+     parecido a la referencia (Filarmónica de Berlín). */
+  html { font-size: clamp(13px, 3.6vw, 16px); }
+  body { font-size: 1.14rem; line-height: 1.6; }
+
+  /* El texto justificado deja huecos feos en columnas angostas */
+  .section-inner > p { text-align: left; text-align-last: auto; }
+
+  .section { padding: 3.4rem 0; }
+
+  /* ---------- Mapa: crédito mínimo ----------
+     La licencia CC BY-SA exige mantener el crédito, así que queda, pero casi
+     como una nota al pie. El tamaño sigue al ancho de la pantalla (1.25vw) para
+     que siempre entre en una sola línea: ~4.9 px a 390 px, sin bajar de 4 px.
+     text-size-adjust evita que Android o iOS lo agranden por su cuenta. */
+  .map-attribution {
+    margin-top: 0.4rem;
+    font-size: clamp(4px, 1.25vw, 7px);
+    line-height: 1.3;
+    letter-spacing: 0;
+    white-space: nowrap;
+    opacity: 0.6;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  .map-attribution a { text-decoration-thickness: 0.5px; }
+}
