@@ -5,8 +5,13 @@ title: Home
 description: "Cantapueblo, the Choral Feast of America. An international choral gathering in Mendoza, Argentina, since 1989."
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/home-hero.css' | relative_url }}">
+
 <div class="hero-photo-band">
-  <img class="hero-bg-photo" fetchpriority="high" src="{{ '/assets/img/hero-aconcagua.webp' | relative_url }}" alt="Choirs holding their countries' flags at the foot of Cerro Aconcagua">
+  <img class="hero-bg-photo" fetchpriority="high"
+       src="{{ '/assets/img/hero-home-1400.webp' | relative_url }}"
+       srcset="{{ '/assets/img/hero-home-1400.webp' | relative_url }} 1400w, {{ '/assets/img/hero-home-2000.webp' | relative_url }} 2000w"
+       sizes="100vw" alt="Choirs holding their countries' flags at the foot of Cerro Aconcagua">
   <div class="hero-overlay"></div>
   <section class="hero hero-on-photo">
     <h1>The Choral Feast of America</h1>

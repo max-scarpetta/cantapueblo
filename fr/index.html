@@ -5,8 +5,13 @@ title: Accueil
 description: "Cantapueblo, la Fête Chorale d'Amérique. Rencontre chorale internationale à Mendoza, Argentine, depuis 1989."
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/home-hero.css' | relative_url }}">
+
 <div class="hero-photo-band">
-  <img class="hero-bg-photo" fetchpriority="high" src="{{ '/assets/img/hero-aconcagua.webp' | relative_url }}" alt="Chorales participantes avec les drapeaux de leurs pays au pied du Cerro Aconcagua">
+  <img class="hero-bg-photo" fetchpriority="high"
+       src="{{ '/assets/img/hero-home-1400.webp' | relative_url }}"
+       srcset="{{ '/assets/img/hero-home-1400.webp' | relative_url }} 1400w, {{ '/assets/img/hero-home-2000.webp' | relative_url }} 2000w"
+       sizes="100vw" alt="Chorales participantes avec les drapeaux de leurs pays au pied du Cerro Aconcagua">
   <div class="hero-overlay"></div>
   <section class="hero hero-on-photo">
     <h1>La Fête Chorale d'Amérique</h1>

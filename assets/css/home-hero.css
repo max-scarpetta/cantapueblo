@@ -1,0 +1,34 @@
+/* Hero de la portada: el texto va a la izquierda con margen propio (en vez de centrarse
+   en la columna de 1120 px), el título y el subtítulo en una sola línea, y la foto ya
+   viene recortada sin la persona del extremo izquierdo. */
+.hero-on-photo {
+  max-width: none;
+  margin: 0;
+  padding-left: clamp(1.5rem, 6vw, 6rem);
+  padding-right: clamp(1.5rem, 6vw, 6rem);
+}
+.hero-on-photo h1 {
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(1.9rem, 4.8vw, 5.2rem);
+}
+.hero-on-photo .tagline {
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(0.95rem, 1.75vw, 1.2rem);
+}
+
+/* En celular el título y el subtítulo vuelven a partirse en varias líneas
+   (en una sola línea quedarían demasiado chicos) */
+@media (max-width: 720px) {
+  .hero-on-photo h1 {
+    white-space: normal;
+    max-width: 18ch;
+    font-size: 2.8rem;
+  }
+  .hero-on-photo .tagline {
+    white-space: normal;
+    max-width: 46ch;
+    font-size: 1.2rem;
+  }
+}
