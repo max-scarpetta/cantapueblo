@@ -186,9 +186,9 @@ choirs:
     name: "Coro Amicana"
     origin: mendoza
     director: "Simón Abecasis"
-  - id: ninos-jovenes-uncuyo
+  - id: ninos-uncuyo
     group: mendoza
-    name: "Coro Niños y Jóvenes UNCUYO"
+    name: "Coro de Niños UNCUYO"
     origin: mendoza
     director: "Ángela Burgoa"
   - id: jaboneria
@@ -206,9 +206,9 @@ choirs:
     name: "Coro Cantapueblo"
     origin: mendoza
     director: "Nancy Ciccioli"
-  - id: akys
+  - id: akis
     group: mendoza
-    name: "Coro Akys"
+    name: "Coro Akis"
     origin: mendoza
     director: "Nancy Ciccioli"
   - id: esloveno
@@ -281,7 +281,7 @@ days:
         title: { es: "Concierto Apertura", en: "Opening Concert", fr: "Concert d'ouverture" }
         venue: { name: "Nave UNCUYO", address: "Maza y Av. España, Ciudad" }
         access: tickets
-        choirs: [camara-uncuyo, amicana, ninos-jovenes-uncuyo, vozeres]
+        choirs: [ninos-uncuyo, camara-uncuyo, amicana, vozeres]
     photos: []
     videos: []
 
@@ -351,7 +351,7 @@ days:
         # y canciones (title, label opcional, by opcional).
         segments:
           - title: { es: "Coros solistas · una canción por coro", en: "Solo choirs · one song each", fr: "Chœurs solistes · une chanson par chœur" }
-            choirs: [canto-vida-mendoza, akys, canto-vida-tucuman, adultos-mayores-las-heras, efren-jurado]
+            choirs: [canto-vida-mendoza, akis, canto-vida-tucuman, adultos-mayores-las-heras, efren-jurado]
             songs:
               - label: { es: "Todos cantan", en: "All sing", fr: "Tous chantent" }
                 title: "Anhelo"
