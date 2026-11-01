@@ -1,377 +1,260 @@
 # Notas técnicas — Cantapueblo
 
-Referencia de trabajo para seguir editando el sitio. No es para gente de
-afuera del proyecto — el README público está en `README.md`.
+Referencia de trabajo para mantener y ampliar el sitio. Es documentación interna: el resumen
+público del proyecto está en [`README.md`](./README.md). Este archivo no se publica (figura en
+`exclude` de `_config.yml`).
 
-## Pendiente
+Última revisión: 1 de noviembre de 2026.
 
-Nada bloqueante por ahora. Contacto ya tiene Email, Instagram, Facebook y
-Ubicación reales (se sacó el campo de teléfono/WhatsApp).
+## Estado actual
 
-## Estructura de archivos
+El sitio está publicado y en uso: <https://mxscvz.github.io/cantapueblo/>. Tiene cinco secciones
+visibles en el menú:
 
-- `_config.yml` — configuración del sitio
-- `_layouts/default.html` — plantilla compartida por todas las páginas
-- `_includes/nav.html`, `_includes/footer.html` — header y footer, escritos una sola vez
-- `assets/css/style.css` — todos los estilos
-- `assets/js/reveal.js` — animación de scroll-reveal
-- `assets/js/header-shrink.js` — logo grande que se achica al hacer scroll
-- `assets/img/carousel/` — las 15 fotos del carrusel de Historia
-- `assets/data/programa.json` — datos de los coros en Programa (bento grid)
-- `es/`, `en/` — el contenido de cada página, por idioma
-- `index.html` — redirige automáticamente según el idioma del navegador
+| Sección | Contenido |
+|---|---|
+| Inicio | Portada con foto, cifras clave, descripción y enlaces |
+| 2026 | Registro de la edición: programa por día, coros, himno, fotos y videos |
+| Historia | Hitos, dos carruseles de fotos, mapa de países y diferenciales |
+| Quiénes somos | Equipo organizador (cinco personas) |
+| Contacto | Email, WhatsApp, Instagram, Facebook, ubicación y preguntas frecuentes |
 
-## Estructura de sección (al agregar contenido nuevo)
+La sección *Programa* está oculta (ver [Programa oculto](#programa-oculto)).
 
-Cada `<section class="section">` ocupa todo el ancho de pantalla. El
-contenido va siempre adentro de un `<div class="section-inner">` para
-quedar centrado con el mismo ancho que el resto del sitio:
+## Pendientes
+
+**Dominio propio (`cantapueblo.org.ar`).** Lo debe registrar la Fundación COPPLA en NIC
+Argentina. Una vez registrado:
+
+1. Delegar el dominio a un proveedor de DNS (por ejemplo Cloudflare).
+2. Cargar cuatro registros `A` a `185.199.108.153`, `185.199.109.153`, `185.199.110.153` y
+   `185.199.111.153`, y un `CNAME` de `www` a `mxscvz.github.io`.
+3. En *Settings → Pages* del repositorio, escribir el dominio y activar *Enforce HTTPS*.
+4. En `_config.yml`, poner `baseurl: ""` y actualizar `url`.
+5. Probar los enlaces viejos de `mxscvz.github.io/cantapueblo/…` y actualizar la biografía de
+   Instagram.
+
+**Contenido a confirmar con la organización**
+
+- *Cantata Callejera* (sábado 14, 12:00): sale de los documentos internos y no figura en el
+  afiche público.
+- *Concierto en las Alturas* (viernes 13): no tiene sede ni datos de entradas cargados.
+- Cuál de los conciertos usa EntradaWeb: se deduce de los logos del afiche, solo el del
+  Hospital Universitario está confirmado como venta directa.
+- Alcance de «Todos cantan *Anhelo*» en el Concierto Final: el programa recibido no aclara si
+  son todos los coros o solo los del primer bloque.
+
+**Después del festival (14 de noviembre)**
+
+- Cargar fotos y videos de cada día y el resumen final en `_data/edicion2026.yml`.
+- Agregar las fotos de los 19 coros de Mendoza que todavía no tienen.
+- Definir fechas y sede de la edición 2027.
+
+**Identidad**
+
+- El logo (`assets/img/logo.png`) lleva el texto «La Fiesta Coral de América» dentro de la
+  imagen, y su texto alternativo en `_includes/nav.html` dice «Cantapueblo 2027». Hay que
+  actualizar ambos cuando exista un logo nuevo.
+
+**Limpieza**
+
+- Hay 65 imágenes `.jpg` (8,9 MB) que no se usan: las páginas cargan solo las versiones
+  `.webp`. La única `.jpg` en uso es `assets/img/og-image.jpg`.
+- Sin uso en las páginas: `assets/js/goal-accordion.js` y sus estilos `.goal-*` en
+  `style.css`, `assets/data/programa.json` y `assets/img/world-map-inline.svg`.
+
+**Titularidad.** El repositorio está en una cuenta personal de GitHub y la cuenta de
+GoatCounter (analítica) también es personal. A mediano plazo conviene pasarlos a una
+organización o dar acceso a más de una persona de la Fundación.
+
+## Arquitectura
+
+```
+_config.yml              baseurl /cantapueblo, plugins, exclude
+_layouts/default.html    <head> (SEO, hreflang, fuentes), menú, footer y scripts
+_includes/
+  nav.html               Header, menú y selector de idioma
+  footer.html            Footer, con un texto por idioma
+  edicion-2026.html      Cuerpo de la página 2026 (lo usan es/en/fr)
+  edicion-media.html     Bloque de fotos y videos (lo usa edicion-2026.html)
+_data/
+  i18n.yml               Ruta y etiqueta de cada sección, por idioma
+  edicion2026.yml        Toda la información de la edición 2026
+assets/css/              style.css (base), mobile.css, home-hero.css, edicion-2026.css
+assets/js/               header-shrink, menu, reveal, carousel, galeria
+_tools/optimizar_fotos.py  Convierte fotos a WebP (la carpeta con guion bajo no se publica)
+es/  en/  fr/            Páginas de cada idioma
+index.html               Redirige según el idioma del navegador (fr, en o es por defecto)
+```
+
+Los archivos CSS de página (`home-hero.css`, `edicion-2026.css`) se enlazan desde la propia
+página, después de `style.css`. `mobile.css` se carga desde la plantilla, también después de
+`style.css`, por lo que pisa sus reglas sin tocarlo.
+
+### Idiomas y rutas
+
+`_data/i18n.yml` guarda, por idioma, la ruta y la etiqueta de cada sección. El selector de
+idioma se genera solo a partir de ese archivo.
+
+**El menú, en cambio, se escribe a mano** en `_includes/nav.html`. Para sumar una sección
+nueva:
+
+1. Crear la página en `es/`, `en/` y `fr/`, con `lang`, `section`, `title` y `description` en
+   el encabezado.
+2. Agregar la ruta y la etiqueta en `_data/i18n.yml`, en los tres idiomas.
+3. Agregar el enlace en `_includes/nav.html`.
+
+Para sumar un idioma nuevo: agregar su bloque en `i18n.yml`, crear su carpeta con las páginas
+y un texto en `_includes/footer.html`.
+
+### Estructura de una sección
+
+Cada `<section class="section">` ocupa todo el ancho; el contenido va dentro de
+`<div class="section-inner">` para quedar centrado:
 
 ```html
 <section class="section reveal">
   <div class="section-inner">
-    ...tu contenido...
+    ...
   </div>
 </section>
 ```
 
-## Dirección visual
-
-- **Colores**: fondo marfil claro, texto grafito. Acentos de los colores
-  del logo (cian, lima, naranja, dorado) solo en hovers, etiquetas y
-  detalles chicos — nunca en bloques grandes.
-- **Tipografía**: Space Grotesk en títulos, Inter en cuerpo de texto.
-- **Liquid Glass**: las tarjetas (pilares, bento, contacto, cronograma,
-  timeline, stats del hero, cita destacada, carrusel) usan vidrio
-  esmerilado — fondo semitransparente + `backdrop-filter: blur()`. Hay
-  manchas de color fijas detrás de todo el sitio (`body::before`) para que
-  el blur tenga algo debajo. Se ve mejor en Chrome/Safari recientes;
-  en navegadores viejos degrada a una tarjeta blanca semi-transparente
-  sin blur, no se rompe.
-- Para agregar una tarjeta nueva con el mismo estilo: clases `glass` +
-  `glass-hover` (el hover agrega el zoom + elevación al pasar el mouse).
-
-## Movimiento al hacer scroll
-
-`assets/js/reveal.js` hace que los elementos con clase `reveal` aparezcan
-con un fade + desplazamiento suave al entrar en pantalla. Respeta
-`prefers-reduced-motion`. Para escalonar varios elementos del mismo
-bloque, sumá `reveal-1`, `reveal-2`, `reveal-3`.
-
-Elementos agregados por JavaScript después de cargar la página (como las
-tarjetas de Programa) necesitan `window.CantaReveal.observe(elemento)`
-manualmente — el observer no los detecta solo.
-
-## Hero (Inicio)
-
-La foto del Aconcagua es ahora el fondo del hero (`.hero-photo-band`), con
-un degradé oscuro (`.hero-overlay`) para que el título en blanco se lea
-bien encima. Los stats (35+, 20+, 2000) se movieron a su propia sección
-debajo, ya no están superpuestos a la foto.
-
-## Carrusel de fotos (Historia)
-
-`.carousel` es una galería horizontal full-bleed que se desliza con
-touch, trackpad o mouse — y ahora también con flechas y una barra
-deslizante (`assets/js/carousel.js`, funciona por `.carousel-wrap`). Para
-agregar una foto:
-
-```html
-<figure class="carousel-item reveal glass glass-hover">
-  <img src="{{ '/assets/img/carousel/16.jpg' | relative_url }}" alt="descripción de la foto">
-</figure>
-```
-
-Sin `figcaption` — se decidió no poner texto al pie de las fotos.
-
-## Programa
-
-> **OCULTO desde el 30/10/2026.** El programa detallado de la edición vive en la pestaña
-> 2026 (`_data/edicion2026.yml`). Las 3 páginas siguen en el repo pero figuran en `exclude`
-> de `_config.yml` y el enlace de `_includes/nav.html` está comentado. El único lugar con el
-> reproductor del himno "El Canto Grande" era esta página. Para volver a mostrarla: borrar las
-> 3 líneas de `exclude` y descomentar el enlace en `nav.html`.
-
-`es/programa.html` / `en/programme.html` / `fr/programme.html` muestran
-el cronograma típico del festival (Concierto Bienvenida, Concierto de
-los Pueblos, etc.) — contenido real de la Propuesta para Coros 2026,
-descrito como estructura típica, sin fechas ni sedes 2027 confirmadas
-todavía.
-
-La sección "Coros participantes" (bento grid cargado desde
-`assets/data/programa.json`) se sacó por ahora — era de datos de
-ejemplo. Vuelve cuando exista la base de datos real de coros (fases 1-3
-del plan grande). El archivo JSON y el layout `.bento` siguen en el
-proyecto, listos para reusar en ese momento.
-
-## Reproductor de audio
-
-Hay un `<audio controls>` sin archivo cargado (los controles se ven, no
-hay sonido). Para activarlo con "El Canto Grande" real:
-
-```html
-<audio controls>
-  <source src="{{ '/assets/audio/el-canto-grande.mp3' | relative_url }}" type="audio/mpeg">
-</audio>
-```
-
-## Contenido narrativo
-
-El texto de "Qué buscamos", "Nuestras acciones", "Nuestros diferenciales",
-la cita de bienvenida y el cronograma de conciertos salen del Manual de
-Procedimientos 2019 y de la Propuesta para Coros 2026 — son textos reales
-de la organización, no inventados.
-
-## Idiomas (ES / EN / FR)
-
-El menú y el selector de idioma se generan solos desde `_data/i18n.yml`
-— ahí vive la ruta y la etiqueta de cada sección, por idioma. Para
-agregar un idioma nuevo, sumás un bloque más a ese YAML con el mismo
-formato y creás la carpeta correspondiente con sus páginas — no hay que
-tocar `nav.html` para el menú. El footer sí tiene un texto fijo por
-idioma con un `{% if %}` simple en `_includes/footer.html`.
-
-## Ajustes de esta vuelta
-
-- Arreglado un bug de CSS por el que el subtítulo del hero (sobre la
-  foto) se veía gris oscuro en vez de blanco — dos reglas con la misma
-  especificidad competían y ganaba la incorrecta. El subtítulo también
-  cambió de tipografía (ahora Space Grotesk) y tiene una sombra de
-  texto sutil para legibilidad.
-- El overlay oscuro sobre la foto del hero es más fuerte.
-- El carrusel ya no muestra la scrollbar nativa ni la barra de progreso
-  propia — solo las flechas.
-- La tarjeta de Ubicación en Contacto linkea a mendoza.tur.ar.
-- El stat "2000" del hero ahora dice "Año 2000" / "Year 2000" / "Année
-  2000" para que quede claro que es un año.
-- "Reconocido en el mundo coral" tiene la clase `section-feature`:
-  fondo con tinte cian + vidrio, con líneas divisorias propias arriba y
-  abajo.
-
-## Secciones destacadas (section-feature)
-
-`.section-feature` es la base (líneas divisorias + vidrio); el color se
-agrega aparte con una segunda clase: `.tint-cian`, `.tint-naranja` o
-`.tint-lima`. Hoy en uso: "Un festival coral internacional" con
-`tint-naranja`, "Reconocimiento en el sector" con `tint-cian`. Para una
-sección nueva destacada, sumá `section-feature` + una de las variantes de
-color.
-
-## Hitos de Historia — fuente
-
-Los hitos de 1997, 1998/2001, 2008 y 2018 (ediciones del festival fuera
-de Mendoza: Viña del Mar, Quito, Río de Janeiro, Guarenas, Ciudad de
-Panamá) y la mención de directores/artistas invitados salen del Manual de
-Procedimientos 2019, página 9 — son datos reales, no inventados.
-
-## Banner de foto (Historia)
-
-`.photo-band` es un componente genérico (foto de fondo + degradé +
-título encima) — el mismo lenguaje visual que el hero de Inicio, pero más
-bajo y pensado para encabezar una sección, no toda la página. Se puede
-reusar en cualquier página nueva.
-
-## Dos carruseles en Historia
-
-- **"Los primeros acordes"** (`assets/img/carousel2/`, 19 fotos): momentos
-  de archivo de cierres del festival, insertado en medio del timeline
-  (entre 1998/2001 y 2000) a propósito.
-- **"Una melodía que sigue creciendo"** (`assets/img/carousel/`, 38
-  fotos): el resto del archivo fotográfico. Los artistas con nombre
-  propio (Nito Mestre, Teresa Parodi, Orozco Barrientos, Jairo) van
-  primero, con caption; el resto, sin caption, después.
-
-En ambos, solo llevan `<figcaption>` los artistas invitados relevantes:
-Ariel Ramírez, Vitale-Baglietto, Opus 4 y Lito Nebbia en el primero;
-Nito Mestre, Teresa Parodi, Orozco Barrientos y Jairo en el segundo. Para
-que una foto tenga caption, sumale la clase `named` al `<figure>` y un
-`<figcaption>` adentro.
-
-**Nota**: `NEBBIA_EN_MALVINAS.jpg` era un duplicado exacto (mismo archivo,
-byte a byte) de `Lito_Nebbia.jpg` — se sacó del sitio, Lito Nebbia queda
-solo en "Los primeros acordes".
-
-## Ajustes de esta vuelta
-
-- **Audio real**: "El Canto Grande" ya suena en Programa
-  (`assets/audio/el-canto-grande.mp3`), sacó la nota de "falta cargar".
-- **Foto de Historia sin recortar de más**: `.photo-band` pasó de una
-  altura fija en `vh` (que recortaba mucho arriba/abajo si la pantalla
-  era proporcionalmente más ancha que la foto) a `aspect-ratio: 1.93/1`,
-  calcado a la proporción real de `historia-bg.jpg`.
-- **Foto de la cita intercambiada**: `quote-portrait.jpg` ahora es el
-  retrato de estudio de Alejandro Scarpetta; la foto que antes estaba ahí
-  (arengando desde el escenario) pasó a `carousel/20.jpg`, en "Una
-  melodía que sigue creciendo".
-- **Carrusel más grande y sin marco**: las fotos ya no tienen borde,
-  esquinas redondeadas ni sombra — quedan pegadas una a la otra, sin
-  espacio entre ellas, y son más grandes (480px de alto en desktop, antes
-  320px). El caption de los artistas con nombre ahora es un texto blanco
-  superpuesto abajo de la foto (con degradé), no un pie separado, porque
-  ya no hay marco donde ponerlo aparte.
-
-## Vuelta atrás — carrusel
-
-El experimento de fotos grandes y sin marco no convenció; el carrusel
-volvió a como estaba: marco de vidrio (`.glass`), gap entre fotos, 320px
-de alto en desktop / 240px en mobile, captions como pie de foto simple
-(no superpuestos).
-
-## Foto principal de Historia — cambiada de nuevo
-
-`historia-bg.jpg` ahora es "CIERRE LARGO copy" (antes era "cierre_96
-copy", que pasó a ocupar el primer lugar de "Los primeros acordes" para
-no perderla). El `aspect-ratio` del banner se ajustó a la proporción real
-de esta foto (2.54:1, más panorámica que la anterior).
-
-## Ajustes de esta vuelta
-
-- **Texto justificado**: todos los párrafos largos (`main p`) se
-  justifican, con la última línea alineada a la izquierda
-  (`text-align-last: left`) para que no quede una palabra sola centrada.
-- **Historia — banner de foto**: el párrafo de la intro se sacó; lo único
-  que sobrevivió ("Cantapueblo nació en la ciudad de Godoy Cruz, Mendoza,
-  en 1989.") pasó a ser el pie dentro del marco de la foto, con el mismo
-  estilo `.tagline` que usa el hero de Inicio.
-- **Definición de la foto de Historia**: `CIERRE LARGO copy` es de
-  1568×616px nomás — no hay forma de sacarle más nitidez de la que tiene.
-  Lo que sí hice fue capar el ancho del banner a `max-width: 1568px` (su
-  resolución real), así nunca se estira más allá de su tamaño nativo en
-  pantallas grandes, que era la causa del efecto "borroso". En pantallas
-  angostas sigue ocupando el 100% como antes.
-- Se sacaron los subtítulos de los dos carruseles de Historia y el
-  párrafo sobre directores/artistas invitados.
-- El segundo carrusel de Historia se renombró a "Una melodía que se
-  sigue escribiendo".
-
-## Nuevas secciones (esta vuelta)
-
-- **Quiénes Somos** — página nueva (`es/quienes-somos.html`,
-  `en/about.html`, `fr/qui-sommes-nous.html`). Solo tiene la tarjeta de
-  Alejandro completa; las otras dos son placeholders (`Foto pendiente` /
-  `Nombre pendiente`) hasta que me pases nombre, rol y foto de las otras
-  2 personas del núcleo organizativo.
-- **Preguntas frecuentes** — sección nueva en Contacto, con acordeón
-  nativo de HTML (`<details>/<summary>`, sin JavaScript). Las respuestas
-  son deliberadamente generales — no inventé montos ni plazos que no
-  tengo confirmados. Si en algún momento tenés esos datos, se pueden
-  hacer más específicas.
-- **Coros de todo el mundo** — nube de países en Historia, con banderas.
-  Reutiliza la misma lista de 20 países que ya estaba en el timeline
-  ("Hoy"), ahora visualizada aparte.
-
-## Más color (a pedido)
-
-Ahora hay 4 secciones con tinte de color + vidrio en vez de todo
-blanco/marfil: "Un festival coral internacional" (naranja),
-"Reconocimiento en el sector" (cian), "Coros de todo el mundo" (lima),
-"Preguntas frecuentes" (dorado). Para sumar una quinta, usá
-`section-feature` + una de esas 4 clases de tinte (o agregá una nueva en
-el CSS, mismo patrón).
-
-## Timeline rediseñado
-
-Ya no son cajas de vidrio — es una línea vertical continua con un nodo de
-color en cada año (los colores rotan entre cian/lima/naranja/dorado
-automáticamente por posición, no hay que asignarlos a mano). El año y el
-texto van directo sobre el fondo, sin marco.
-
-## Mapa real de países (reemplazó la nube de banderas y la constelación)
-
-Es un SVG real del mundo (fuente: [simple-world-map de flekschas](https://github.com/flekschas/simple-world-map),
-licencia CC BY-SA 3.0 — la atribución ya está puesta debajo del mapa, no
-sacarla). Cada país es un `<path>` con un `id` de 2 letras (código ISO
-3166-1, ej. `id="ar"` para Argentina). Los 20 países del festival tienen
-además `class="highlighted"`, que los pinta con el color dorado de la
-paleta; el resto del mundo queda en gris neutro.
-
-Va **embebido directo en el HTML** (no como `<img src="...">`) porque así
-sí puede leer los colores del sitio (`var(--dorado)`, etc.) — si se
-pusiera como imagen externa, esos colores no se verían.
-
-**Para agregar o sacar un país** de los resaltados: buscá su `id="xx"`
-dentro del SVG (código de 2 letras, minúscula) en cualquiera de los 3
-archivos de Historia, y sumale o sacale `class="highlighted"`. Hay que
-repetirlo en los 3 idiomas porque el mapa está copiado en cada archivo.
-
-## Mapa — bug corregido
-
-Argentina, Chile, Ecuador, Suecia, Italia, España, Estados Unidos y
-Malasia son países "compuestos" en el archivo del mapa (tienen islas o
-territorios como piezas separadas, agrupadas en un `<g>` en vez de ser un
-único `<path>`). La regla de color original solo pintaba `<path>`
-sueltos, así que estos 8 países quedaban sin resaltar aunque tuvieran la
-clase correcta — quedó corregido con una regla CSS que también cubre los
-`<path>` adentro de un `<g class="highlighted">`. Se sumaron también las
-Islas Malvinas (`id="fk"`) a los países resaltados.
-
-## Fotos del equipo
-
-Las tres tarjetas de Quiénes Somos ya tienen foto real: Alejandro
-Scarpetta, León Repetur y Gustavo Aguilera. Solo falta el rol de Gustavo
-cuando lo confirmes.
-
-## Arreglos de mobile (a partir de capturas reales)
-
-- **Bug de fondo, ya resuelto**: el nav con 5 secciones no pasaba a la
-  línea de abajo en mobile — eso empujaba el ancho de **toda la página**,
-  no solo el menú, y por eso se veía una franja vacía a la derecha en
-  todas las capturas. Ahora el nav envuelve bien, y sumé
-  `overflow-x: hidden` en el `<html>` como red de seguridad para que esto
-  no vuelva a pasar aunque algún elemento futuro se desborde.
-- **"Qué buscamos" en mobile**: las 3 tarjetas ahora son un carrusel de
-  una sola tarjeta a la vez, deslizable — antes intentaban entrar las 3
-  en una fila angosta ("chorizo" de texto).
-- **Justificado**: se acotó a los párrafos de introducción (los que están
-  directo dentro de una sección), no a los que están dentro de tarjetas
-  angostas — ahí el justificado quedaba feo por tener muy pocas palabras
-  por línea.
-- **Legibilidad del texto sobre la foto de Historia**: degradé más oscuro
-  y sombra de texto más fuerte.
-
-## Mejoras técnicas (favicon, redes sociales, buscadores)
-
-- **Favicon**: recorté la insignia "2027" del logo (`favicon-16x16.png`,
-  `favicon-32x32.png`, `apple-touch-icon.png`, en la raíz del proyecto).
-- **Open Graph / Twitter Card**: cuando alguien comparte un link del
-  sitio en WhatsApp/Instagram/Facebook, ahora va a aparecer con imagen,
-  título y descripción — la imagen es `assets/img/og-image.jpg`, un
-  recorte de la foto del Aconcagua a 1200×630.
-- **hreflang**: cada página ahora le dice a Google cuáles son sus
-  versiones en los otros dos idiomas, para que no las confunda con
-  contenido duplicado.
-- **Sitemap automático**: sumé el plugin `jekyll-sitemap` (oficial de
-  GitHub Pages, no requiere nada más) — genera solo un `sitemap.xml` con
-  todas las páginas. También agregué `robots.txt` apuntando a ese
-  sitemap.
-- **Carga diferida (`loading="lazy"`)**: en las 183 fotos que no son la
-  primera que ves al entrar a una página. Las fotos de fondo del hero (la
-  del Aconcagua en Inicio, la de Historia) se quedan sin lazy a propósito,
-  porque esas sí hay que verlas de entrada.
-
-## Ver el sitio en tu computadora antes de subirlo
-
-Requiere Ruby instalado (ver instrucciones de instalación con Homebrew si
-hace falta).
-
-```
-gem install bundler jekyll
-bundle init
-bundle add jekyll
-bundle exec jekyll serve
-```
-
-Después abrí `http://localhost:4000/cantapueblo/`. Jekyll actualiza el
-sitio automáticamente cada vez que guardás un cambio — solo hay que
-recargar el navegador. Esto es opcional: también podés subir directo a
-GitHub y ver el resultado en la URL pública en 1-2 minutos.
-
-## Publicar cambios
-
-```
-git add .
-git commit -m "mensaje describiendo el cambio"
-git push
-```
-
-GitHub reconstruye el sitio automáticamente después de cada `push`.
+## Edición 2026
+
+Todo sale de `_data/edicion2026.yml`; las tres páginas `2026.html` solo incluyen
+`_includes/edicion-2026.html`. El archivo explica en sus comentarios iniciales cómo agregar
+fotos y videos. Resumen de su estructura:
+
+- **`ui`**: textos de la página por idioma (títulos, avisos, etiquetas, texto del himno).
+- **`origins`**: procedencia de cada coro, por idioma.
+- **`choirs`**: un coro por entrada, con `id`, `group` (`exterior`, `provincias` o `mendoza`),
+  `name`, `origin`, `director` y, opcionalmente, `photo`.
+- **`days`**: cuatro días, cada uno con `events`, `photos` y `videos`.
+- **`highlights`**: fotos y videos del resumen final. El bloque aparece solo cuando hay
+  contenido.
+
+Cada evento tiene `time`, `title` (por idioma), y opcionalmente `subtitle`, `venue`, `note` y
+`choirs` (lista de `id`).
+
+- **Entradas:** `access` admite `free` (entrada libre), `tickets` (EntradaWeb, con `ticket_url`
+  opcional) y `hospital` (venta directa del Hospital Universitario).
+- **Programa por bloques:** `segments` agrupa coros y canciones en orden, como en el Concierto
+  Final.
+
+**Fotos de coros:** recorte horizontal de 2:1 (por ejemplo 960×480 px), en
+`assets/img/2026/coros/`, y la línea `photo: archivo.webp` en el coro.
+`python3 _tools/optimizar_fotos.py CARPETA coros` convierte las fotos a WebP.
+
+**Fotos del festival:** en `assets/img/2026/`, con `python3 _tools/optimizar_fotos.py CARPETA`.
+Los videos pueden ser de YouTube (campo `youtube`) o archivos propios cortos en
+`assets/video/2026/` (la carpeta todavía no existe: se crea al subir el primero).
+
+**Al agregar un coro**, usar un `id` único y, si participa en conciertos, sumar ese `id` a
+la lista `choirs` del evento. Un `id` que no existe rompe el enlace de la lista.
+
+## Programa oculto
+
+La página genérica *Programa* (`es/programa.html`, `en/programme.html`, `fr/programme.html`)
+está oculta desde el 30/10/2026, porque el programa detallado vive en la pestaña 2026. Los
+archivos siguen en el repositorio, pero:
+
+- figuran en `exclude` de `_config.yml`, por lo que no se publican ni entran al sitemap;
+- su enlace en `_includes/nav.html` está comentado;
+- el botón de la portada apunta a la página 2026.
+
+Para volver a mostrarla: quitar las tres líneas de `exclude`, descomentar el enlace en
+`nav.html` y volver a apuntar el botón de `index.html`. Esa página describía el formato típico
+del festival y, en el texto, una edición 2027 sin fechas.
+
+## Sistema de diseño
+
+- **Colores**: fondo marfil claro y texto grafito. Los colores del logo (cian, lima, naranja
+  y dorado) se usan como acento en detalles, no en bloques grandes.
+- **Tipografía**: Space Grotesk en títulos e Inter en el texto.
+- **Vidrio esmerilado**: las tarjetas usan las clases `glass` y `glass-hover` (fondo
+  semitransparente con `backdrop-filter: blur()`). Hay manchas de color fijas detrás del
+  sitio (`body::before`) para que el desenfoque tenga algo que mostrar. En navegadores
+  viejos se degrada a una tarjeta semitransparente sin desenfoque.
+- **Secciones destacadas**: `section-feature` más una clase de color: `tint-cian`,
+  `tint-naranja`, `tint-lima` o `tint-dorado`.
+- **Aparición al hacer scroll**: `assets/js/reveal.js` anima los elementos con clase `reveal`
+  (con `reveal-1` a `reveal-5` para escalonar). Respeta `prefers-reduced-motion`. Los
+  elementos agregados por JavaScript necesitan `window.CantaReveal.observe(elemento)`.
+- **Banner de foto** (`.photo-band`): foto de fondo, degradé y texto encima; se usa en
+  Historia (`historia-bg.webp`) y en la página 404 (`hero-aconcagua.webp`). Tiene una relación 2,54:1 y un ancho máximo de 1568 px, que es
+  la resolución real de la foto; más ancho se vería borroso.
+- **Portada**: `.hero-photo-band` con la foto en `hero-home-1400.webp` y
+  `hero-home-2000.webp` (`srcset`). El título se ajusta al ancho de la pantalla con `clamp()`
+  (`home-hero.css`).
+
+## Componentes
+
+- **Carruseles de fotos** (`.carousel`, `assets/js/carousel.js`): galería horizontal con
+  flechas y deslizamiento táctil. Historia tiene dos: el de *Nuestros primeros acordes*
+  (19 fotos, `assets/img/carousel2/`) y el de *Nuestro canto se sigue expandiendo* (38 fotos,
+  `assets/img/carousel/`). Para que una foto lleve epígrafe se agrega la clase `named` al
+  `<figure>` y un `<figcaption>`. Se usan solo las versiones `.webp`.
+- **Línea de tiempo** (`.timeline`): una línea vertical con un punto por hito; los colores
+  rotan solos.
+- **Mapa de países** (en Historia): SVG embebido en el HTML, no como imagen, para que use los
+  colores del sitio. Cada país es un `<path>` con `id` ISO de 2 letras. Los resaltados llevan
+  `class="highlighted"`. Está copiado en los tres idiomas, así que cualquier cambio se repite
+  en `es/historia.html`, `en/history.html` y `fr/histoire.html`. Los países compuestos
+  (Argentina, Chile, Ecuador, Suecia, Italia, España, Estados Unidos y Malasia) son un `<g>`
+  con varios `<path>`; una regla de CSS ya cubre ese caso. **La atribución de la licencia
+  CC BY-SA 3.0 debajo del mapa debe mantenerse**; en celular se muestra en tamaño mínimo
+  (`mobile.css`).
+- **Preguntas frecuentes** (en Contacto): acordeón nativo con `<details>`, sin JavaScript. Las
+  respuestas son generales, sin montos ni plazos.
+- **Equipo** (`.team-row`): cinco personas, con foto y rol.
+- **Reproductor del himno** (`.audio-block`): "El Canto Grande" en la página 2026, con
+  `assets/audio/el-canto-grande.mp3` y `preload="none"` para no descargar 4,6 MB de entrada.
+- **Visor de fotos** (`assets/js/galeria.js`): visor a pantalla completa para las fotos de la
+  edición, con el elemento nativo `<dialog>`.
+
+## Celular
+
+- `mobile.css` se carga después de `style.css` y tiene dos tramos:
+  - hasta **960 px**: header compacto con el menú desplegable;
+  - hasta **720 px**: escala de texto y crédito del mapa.
+- **Menú** (`menu.js`): el botón de la derecha abre un desplegable con Historia, Quiénes somos
+  y Contacto; Inicio y 2026 quedan siempre a la vista. Al bajar, la segunda fila (Inicio y 2026) se
+  esconde para ganar espacio y reaparece al abrir el menú. Sin JavaScript no hay botón y los enlaces quedan visibles.
+- **Escala de texto**: todos los tamaños están en `rem`; a 390 px de ancho la base es de 14 px
+  y el texto de lectura de 16 px.
+- Los párrafos de las secciones se justifican en escritorio y se alinean a la izquierda en
+  celular.
+- `overflow-x: hidden` en `<html>` evita que un elemento ancho agrande toda la página.
+
+## SEO y compartir
+
+- **Open Graph y Twitter Card**: título, descripción e imagen (`og-image.jpg`, 1200×630) al
+  compartir un enlace.
+- **hreflang**: cada página declara sus versiones en los otros idiomas.
+- **Sitemap**: `jekyll-sitemap` lo genera solo; `robots.txt` lo apunta.
+- **Carga diferida**: `loading="lazy"` en las fotos fuera de la primera pantalla. Las fotos
+  principales no lo llevan.
+- **Favicon**: recorte del logo (`favicon-16x16.png`, `favicon-32x32.png`,
+  `apple-touch-icon.png`, en la raíz).
+- **Analítica**: GoatCounter, sin cookies; se carga desde `_layouts/default.html`.
+
+## Fuentes del contenido
+
+- Textos de *Qué buscamos*, *Nuestras acciones*, diferenciales, cita de bienvenida y datos
+  de los hitos: Manual de Procedimientos 2019 y Propuesta para Coros 2026.
+- Edición 2026: programa y afiches publicados por la organización, y los documentos y
+  mensajes enviados por Alejandro Scarpetta.
+
+## Desarrollo local y publicación
+
+Los comandos están en el [`README.md`](./README.md). Dos puntos prácticos:
+
+- Antes de `git add .`, correr `git status` para revisar qué se va a subir.
+- Para ver el sitio en un celular real: `bundle exec jekyll serve --host 0.0.0.0` y abrir
+  `http://<IP>:4000/cantapueblo/es/` con `http://`, no `https://`.
+
+## Decisiones de diseño descartadas
+
+- **Carrusel sin marco y con fotos grandes**: se probó y no convenció; se volvió al marco de
+  vidrio, con separación entre fotos y epígrafe como pie simple.
