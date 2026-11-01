@@ -33,17 +33,16 @@
   }
 }
 
-/* Próxima edición: fechas tentativas debajo del hero */
-.next-edition { padding-bottom: 0; }
-.next-kicker {
-  display: block;
-  margin-bottom: 1rem;
+/* Próxima edición: bloque destacado debajo del hero, separado de las cifras */
+.next-edition h2.next-title {
+  max-width: none;
+  margin-bottom: 1.2rem;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.8rem;
+  font-size: clamp(1.25rem, 5vw, 1.9rem);
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--naranja);
+  color: var(--ink);
 }
 .next-dates { grid-template-columns: repeat(2, 1fr); }
 .next-dates .hero-stat strong {
