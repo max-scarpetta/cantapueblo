@@ -23,8 +23,10 @@ La sección *Programa* está oculta (ver [Programa oculto](#programa-oculto)).
 
 ## Pendientes
 
-**Dominio propio (`cantapueblo.org.ar`).** Lo debe registrar la Fundación COPPLA en NIC
-Argentina. Una vez registrado:
+**Dominio propio (`cantapueblo.org.ar`).** Lo debe registrar Alejandro Scarpetta en NIC
+Argentina, a su nombre como persona, porque la Fundación COPPLA ya no está activa. Si más
+adelante se regulariza una entidad, conviene pasar el dominio a ella (consultar a NIC cómo
+se hace el cambio de titular). Una vez registrado:
 
 1. Delegar el dominio a un proveedor de DNS (por ejemplo Cloudflare).
 2. Cargar cuatro registros `A` a `185.199.108.153`, `185.199.109.153`, `185.199.110.153` y
@@ -48,7 +50,9 @@ Argentina. Una vez registrado:
 
 - Cargar fotos y videos de cada día y el resumen final en `_data/edicion2026.yml`.
 - Agregar las fotos de los 19 coros de Mendoza que todavía no tienen.
-- Definir fechas y sede de la edición 2027.
+- Confirmar las fechas de 2027 y definir la sede. La portada muestra dos fechas tentativas
+  (23 al 26 de junio y 10 al 13 de noviembre) con el aviso «Muy pronto, novedades»; se editan
+  en `es/index.html`, `en/index.html` y `fr/index.html`.
 
 **Identidad**
 
@@ -165,7 +169,8 @@ archivos siguen en el repositorio, pero:
 
 Para volver a mostrarla: quitar las tres líneas de `exclude`, descomentar el enlace en
 `nav.html` y volver a apuntar el botón de `index.html`. Esa página describía el formato típico
-del festival y, en el texto, una edición 2027 sin fechas.
+del festival y, en el texto, una edición 2027 sin fechas (hoy desactualizado: la portada ya
+muestra fechas tentativas).
 
 ## Sistema de diseño
 

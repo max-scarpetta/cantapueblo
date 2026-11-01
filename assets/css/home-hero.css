@@ -32,3 +32,35 @@
     font-size: 1.05rem;
   }
 }
+
+/* Próxima edición: fechas tentativas debajo del hero */
+.next-edition { padding-bottom: 0; }
+.next-kicker {
+  display: block;
+  margin-bottom: 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--naranja);
+}
+.next-dates { grid-template-columns: repeat(2, 1fr); }
+.next-dates .hero-stat strong {
+  font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+  color: var(--cian);
+}
+.next-dates .hero-stat:nth-child(2) strong { color: var(--naranja); }
+.section-inner > p.next-soon {
+  margin: 1.3rem 0 0;
+  text-align: left;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+@media (max-width: 720px) {
+  .next-dates { grid-template-columns: 1fr; }
+}

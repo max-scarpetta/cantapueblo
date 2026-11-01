@@ -1,8 +1,7 @@
 # Cantapueblo
 
 Sitio web oficial de **Cantapueblo — La Fiesta Coral de Latinoamérica**, encuentro coral
-internacional que se realiza en Mendoza, Argentina, desde 1989 y es organizado por la
-Fundación COPPLA.
+internacional que se realiza en Mendoza, Argentina, desde 1989.
 
 **Sitio en vivo:** <https://mxscvz.github.io/cantapueblo/>
 
@@ -73,5 +72,5 @@ La guía completa de componentes, estilos y decisiones de diseño está en [`NOT
 - Mapa mundial de la sección *Coros de todo el mundo*: [Al MacDonald](https://commons.wikimedia.org/wiki/File:World_map_-_low_resolution.svg),
   editado por Fritz Lekschas, bajo licencia [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
   La atribución debe mantenerse en la página.
-- Los textos, fotografías, logos y el audio del himno pertenecen a Cantapueblo / Fundación COPPLA.
+- Los textos, fotografías, logos y el audio del himno pertenecen a Cantapueblo.
   No se define una licencia de reutilización.
