@@ -62,27 +62,9 @@ se obtiene con `ipconfig getifaddr en0`. La dirección debe empezar con `http://
 ## Publicación
 
 Cada `push` a `main` reconstruye y publica el sitio automáticamente. El despliegue demora
-entre uno y dos minutos y se puede seguir en la pestaña *Actions* del repositorio.
-
-```bash
-git add .
-git commit -m "feat: descripción corta del cambio"
-git pull --rebase
-git push
-```
-
-Los mensajes de commit siguen el formato `tipo: descripción corta`, con los tipos `feat`,
-`fix`, `style`, `chore` y `docs`.
-
-## Cómo editar el contenido
-
-| Quiero… | Dónde |
-|---|---|
-| Cambiar el programa, los coros o la sede de la edición 2026 | `_data/edicion2026.yml` |
-| Agregar fotos o videos de la edición | `_data/edicion2026.yml` (instrucciones al principio del archivo) |
-| Optimizar fotos antes de subirlas | `python3 _tools/optimizar_fotos.py CARPETA` |
-| Cambiar un texto de Inicio, Historia, Quiénes somos o Contacto | `es/`, `en/` y `fr/` (el mismo cambio en los tres idiomas) |
-| Modificar el menú | `_includes/nav.html` y `_data/i18n.yml` |
+entre uno y dos minutos y se puede seguir en la pestaña *Actions* del repositorio. Los mensajes
+de commit siguen el formato `tipo: descripción corta`, con los tipos `feat`, `fix`, `style`,
+`chore` y `docs`.
 
 La guía completa de componentes, estilos y decisiones de diseño está en [`NOTES.md`](./NOTES.md).
 
