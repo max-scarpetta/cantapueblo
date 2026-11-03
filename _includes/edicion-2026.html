@@ -156,6 +156,21 @@
 </section>
 {%- endif %}
 
+{%- if ed.supporters.size > 0 %}
+<section class="section edition-supporters reveal" id="apoyos">
+  <div class="section-inner">
+    <h2 class="supporters-title">{{ ui.supporters_title }}</h2>
+    <ul class="supporters-grid">
+      {%- for sp in ed.supporters %}
+      <li class="supporter glass{% if sp.dark %} is-dark{% endif %}">
+        <img loading="lazy" src="{{ '/assets/img/2026/apoyos/' | append: sp.file | relative_url }}" alt="{{ sp.name | escape }}">
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}
+
 <dialog class="lightbox" aria-label="{{ ui.photos }}">
   <button type="button" class="lightbox-close" aria-label="{{ ui.close }}">&times;</button>
   <button type="button" class="lightbox-nav lightbox-prev" aria-label="{{ ui.prev }}">&#8249;</button>

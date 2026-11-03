@@ -40,6 +40,10 @@ se hace el cambio de titular). Una vez registrado:
 
 - *Cantata Callejera* (sábado 14, 12:00): sale de los documentos internos y no figura en el
   afiche público.
+- **Logos de apoyo:** confirmar con cada institución que autoriza el uso de su logo, y pedir
+  versiones de mejor calidad de *Mendoza Ciudad* (191×67 px) y *Cepas Turismo* (200×148 px),
+  que se ven algo borrosas en pantallas de alta resolución. El orden es una propuesta (gobierno,
+  universidad, espacios culturales, asociaciones, empresas).
 - *Concierto en las Alturas* (viernes 13): no tiene sede ni datos de entradas cargados.
 - Cuál de los conciertos usa EntradaWeb: se deduce de los logos del afiche, solo el del
   Hospital Universitario está confirmado como venta directa.
@@ -135,6 +139,11 @@ fotos y videos. Resumen de su estructura:
 - **`choirs`**: un coro por entrada, con `id`, `group` (`exterior`, `provincias` o `mendoza`),
   `name`, `origin`, `director` y, opcionalmente, `photo`.
 - **`days`**: cuatro días, cada uno con `events`, `photos` y `videos`.
+- **`supporters`**: logos de las instituciones y empresas que apoyan el festival. Se muestran
+  al final de la página, bajo el título «Apoyan Cantapueblo estas instituciones y empresas»
+  (`ui.supporters_title`). Cada entrada lleva `name`, `file` (en `assets/img/2026/apoyos/`) y,
+  si el logo es blanco, `dark: true` para darle fondo oscuro. El orden de la lista es el orden
+  en pantalla.
 - **`highlights`**: fotos y videos del resumen final. El bloque aparece solo cuando hay
   contenido.
 

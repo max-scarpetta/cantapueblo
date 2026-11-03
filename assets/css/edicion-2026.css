@@ -381,7 +381,46 @@
 .lightbox-close { position: absolute; top: 1rem; right: 1rem; }
 .lightbox-nav[hidden] { display: none; }
 
+/* Instituciones y empresas que apoyan */
+.edition-supporters h2.supporters-title {
+  max-width: none;
+  margin-bottom: 1.6rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.05rem, 3.4vw, 1.45rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.supporters-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 0.9rem;
+}
+.supporter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 112px;
+  padding: 0.9rem 1.1rem;
+  background: #fff;
+}
+.supporter img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.supporter.is-dark { background: #3a3a3a; }
+
 @media (max-width: 720px) {
+  .supporters-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+  .supporter { height: 96px; padding: 0.7rem 0.8rem; }
   .edition-events > li { grid-template-columns: 3.4rem 1fr; gap: 0.7rem; }
   .edition-choir-grid { grid-template-columns: 1fr; }
   .edition-gallery { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }

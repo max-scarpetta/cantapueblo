@@ -29,6 +29,8 @@
 #   - Archivo propio (clips cortos, idealmente < 20 MB) en assets/video/2026/:
 #          - file: clip-cantata.mp4
 #
+# LOGOS DE APOYO: al final del archivo, lista  supporters  (instrucciones allí).
+#
 # CAMBIAR UN CONCIERTO: horario (time), sede (venue), entradas (access:
 #   free | tickets | hospital, y ticket_url), o sumar/quitar coros (lista choirs con los
 #   "id" de la sección choirs de más abajo).
@@ -63,6 +65,7 @@ ui:
     videos: "Videos"
     no_media: "Las fotografías y los videos de esta jornada se incorporarán durante y después del festival."
     highlights_title: "Lo mejor de la edición 2026"
+    supporters_title: "Apoyan a Cantapueblo estas instituciones y empresas"
     close: "Cerrar"
     prev: "Foto anterior"
     next: "Foto siguiente"
@@ -91,6 +94,7 @@ ui:
     videos: "Videos"
     no_media: "Photographs and videos from this day will be added during and after the festival."
     highlights_title: "Highlights of the 2026 edition"
+    supporters_title: "These institutions and companies support Cantapueblo"
     close: "Close"
     prev: "Previous photo"
     next: "Next photo"
@@ -119,6 +123,7 @@ ui:
     videos: "Vidéos"
     no_media: "Les photographies et les vidéos de cette journée seront ajoutées pendant et après le festival."
     highlights_title: "Les temps forts de l'édition 2026"
+    supporters_title: "Ces institutions et entreprises soutiennent Cantapueblo"
     close: "Fermer"
     prev: "Photo précédente"
     next: "Photo suivante"
@@ -373,3 +378,24 @@ days:
 highlights:
   photos: []
   videos: []
+
+# Instituciones y empresas que apoyan el festival. Se muestran al final de la página 2026,
+# en este orden. Los logos están en assets/img/2026/apoyos/.
+#   file: nombre del archivo del logo (.webp)
+#   name: nombre que lee un lector de pantalla (el logo ya trae el nombre dibujado)
+#   dark: true  -> el logo es blanco y necesita fondo oscuro
+supporters:
+  - { name: "Mendoza Argentina", file: "mendoza-argentina.webp" }
+  - { name: "Las Heras", file: "las-heras.webp" }
+  - { name: "Mendoza Ciudad", file: "mendoza-ciudad.webp", dark: true }
+  - { name: "UNCUYO · Secretaría de Extensión Universitaria", file: "uncuyo-extension.webp" }
+  - { name: "Nave UNCUYO", file: "nave-uncuyo.webp" }
+  - { name: "Teatro Independencia", file: "teatro-independencia.webp" }
+  - { name: "Espacio Cultural Julio Le Parc", file: "le-parc.webp" }
+  - { name: "Fundación Hospital Universitario", file: "fundacion-hospital-universitario.webp" }
+  - { name: "Jesuitas Mendoza", file: "jesuitas-mendoza.webp" }
+  - { name: "ADICORA", file: "adicora.webp" }
+  - { name: "OFADAC", file: "ofadac.webp" }
+  - { name: "El Foro Nuevo Cuyo", file: "el-foro.webp" }
+  - { name: "Cepas Turismo", file: "cepas-turismo.webp" }
+  - { name: "Tres Provincias", file: "tres-provincias.webp" }
