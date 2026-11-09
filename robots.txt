@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mxscvz.github.io/cantapueblo/sitemap.xml
+Sitemap: https://cantapueblo.musica.ar/sitemap.xml
