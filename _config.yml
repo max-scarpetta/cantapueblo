@@ -1,7 +1,7 @@
 title: Cantapueblo
 description: "La Fiesta Coral de Latinoamérica — Mendoza, Argentina"
-baseurl: "/cantapueblo"
-url: "https://mxscvz.github.io"
+baseurl: ""
+url: "https://cantapueblo.musica.ar"
 
 markdown: kramdown
 theme: null
