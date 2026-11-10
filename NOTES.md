@@ -4,11 +4,11 @@ Referencia de trabajo para mantener y ampliar el sitio. Es documentación intern
 público del proyecto está en [`README.md`](./README.md). Este archivo no se publica (figura en
 `exclude` de `_config.yml`).
 
-Última revisión: 1 de noviembre de 2026.
+Última revisión: 10 de noviembre de 2026.
 
 ## Estado actual
 
-El sitio está publicado y en uso: <https://mxscvz.github.io/cantapueblo/>. Tiene cinco secciones
+El sitio está publicado y en uso: <https://cantapueblo.musica.ar>. Tiene cinco secciones
 visibles en el menú:
 
 | Sección | Contenido |
@@ -23,18 +23,13 @@ La sección *Programa* está oculta (ver [Programa oculto](#programa-oculto)).
 
 ## Pendientes
 
-**Dominio propio (`cantapueblo.org.ar`).** Lo debe registrar Alejandro Scarpetta en NIC
-Argentina, a su nombre como persona, porque la Fundación COPPLA ya no está activa. Si más
-adelante se regulariza una entidad, conviene pasar el dominio a ella (consultar a NIC cómo
-se hace el cambio de titular). Una vez registrado:
+**Después del cambio de dominio**
 
-1. Delegar el dominio a un proveedor de DNS (por ejemplo Cloudflare).
-2. Cargar cuatro registros `A` a `185.199.108.153`, `185.199.109.153`, `185.199.110.153` y
-   `185.199.111.153`, y un `CNAME` de `www` a `mxscvz.github.io`.
-3. En *Settings → Pages* del repositorio, escribir el dominio y activar *Enforce HTTPS*.
-4. En `_config.yml`, poner `baseurl: ""` y actualizar `url`.
-5. Probar los enlaces viejos de `mxscvz.github.io/cantapueblo/…` y actualizar la biografía de
-   Instagram.
+- Probar que los enlaces viejos de `mxscvz.github.io/cantapueblo/…` lleven al dominio nuevo.
+  Si no redirigen, los enlaces ya compartidos (por ejemplo en mensajes viejos) quedan rotos.
+- Actualizar el link de la biografía de Instagram y el campo *Website* del repositorio en
+  GitHub (hoy dice `mxscvz.github.io/cantapueblo/`).
+- Confirmar que *Enforce HTTPS* quedó activado en *Settings → Pages*.
 
 **Contenido a confirmar con la organización**
 
@@ -74,12 +69,29 @@ se hace el cambio de titular). Una vez registrado:
 
 **Titularidad.** El repositorio está en una cuenta personal de GitHub y la cuenta de
 GoatCounter (analítica) también es personal. A mediano plazo conviene pasarlos a una
-organización o dar acceso a más de una persona de la Fundación.
+organización o dar acceso a más de una persona del equipo.
+
+## Dominio
+
+- **Dirección:** `cantapueblo.musica.ar`, registrada en NIC Argentina el 3/11/2026.
+- **Titular:** Alejandro Scarpetta, como persona, porque la Fundación COPPLA no está activa.
+  Solo el titular puede hacer trámites en NIC (entra con su CUIT y clave fiscal). Si más
+  adelante se regulariza una entidad, se puede consultar a NIC cómo pasarle el dominio.
+- **Requisito:** los dominios `.musica.ar` exigen estar inscripto en el INAMU; Alejandro lo está.
+- **Vencimiento: 3/11/2027.** Se renueva cada año en NIC. Si vence y pasa el período de
+  gracia, cualquiera puede registrarlo.
+- **Cómo está conectado:** en NIC, el dominio está delegado a un proveedor de DNS. Ahí hay
+  cuatro registros `A` a `185.199.108.153`, `185.199.109.153`, `185.199.110.153` y
+  `185.199.111.153` (GitHub Pages) y un `CNAME` de `www` a `mxscvz.github.io`. En el repo, el
+  archivo `CNAME` tiene el dominio y `_config.yml` tiene `baseurl: ""` y
+  `url: "https://cantapueblo.musica.ar"`. Si alguna vez se vuelve a la dirección de GitHub,
+  hay que borrar `CNAME` y volver a poner `baseurl: "/cantapueblo"`.
 
 ## Arquitectura
 
 ```
-_config.yml              baseurl /cantapueblo, plugins, exclude
+_config.yml              url del dominio, baseurl vacío, plugins, exclude
+CNAME                    Dominio propio (cantapueblo.musica.ar) para GitHub Pages
 _layouts/default.html    <head> (SEO, hreflang, fuentes), menú, footer y scripts
 _includes/
   nav.html               Header, menú y selector de idioma
@@ -268,7 +280,7 @@ Los comandos están en el [`README.md`](./README.md). Dos puntos prácticos:
 
 - Antes de `git add .`, correr `git status` para revisar qué se va a subir.
 - Para ver el sitio en un celular real: `bundle exec jekyll serve --host 0.0.0.0` y abrir
-  `http://<IP>:4000/cantapueblo/es/` con `http://`, no `https://`.
+  `http://<IP>:4000/es/` con `http://`, no `https://`.
 
 ## Decisiones de diseño descartadas
 

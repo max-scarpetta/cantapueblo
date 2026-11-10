@@ -3,7 +3,7 @@
 Sitio web oficial de **Cantapueblo — La Fiesta Coral de Latinoamérica**, encuentro coral
 internacional que se realiza en Mendoza, Argentina, desde 1989.
 
-**Sitio en vivo:** <https://mxscvz.github.io/cantapueblo/>
+**Sitio en vivo:** <https://cantapueblo.musica.ar>
 
 ## Características
 
@@ -19,6 +19,7 @@ internacional que se realiza en Mendoza, Argentina, desde 1989.
 |---|---|
 | Generador de sitio | [Jekyll](https://jekyllrb.com/) 4.4 (`jekyll-sitemap` para el sitemap) |
 | Hosting | GitHub Pages, publicado desde la rama `main` |
+| Dominio | `cantapueblo.musica.ar` (registrado en NIC Argentina, configurado en el archivo `CNAME`) |
 | Estilos y scripts | CSS y JavaScript propios, sin dependencias |
 | Tipografías | Space Grotesk e Inter (Google Fonts) |
 | Analítica | [GoatCounter](https://www.goatcounter.com/) |
@@ -36,6 +37,7 @@ _tools/                  Utilidades de mantenimiento (no se publican)
 assets/                  Estilos, scripts, imágenes, audio y video
 es/  en/  fr/            Contenido de cada página, por idioma
 index.html               Redirige al idioma del navegador
+CNAME                    Dominio propio para GitHub Pages
 ```
 
 ## Desarrollo local
@@ -47,7 +49,7 @@ bundle install
 bundle exec jekyll serve
 ```
 
-El sitio queda en <http://localhost:4000/cantapueblo/> y se regenera al guardar cada cambio.
+El sitio queda en <http://localhost:4000/> y se regenera al guardar cada cambio.
 
 Para probarlo desde un celular conectado a la misma red Wi‑Fi:
 
@@ -55,7 +57,7 @@ Para probarlo desde un celular conectado a la misma red Wi‑Fi:
 bundle exec jekyll serve --host 0.0.0.0
 ```
 
-y abrir `http://<IP-de-la-computadora>:4000/cantapueblo/es/` desde el celular. En macOS la IP
+y abrir `http://<IP-de-la-computadora>:4000/es/` desde el celular. En macOS la IP
 se obtiene con `ipconfig getifaddr en0`. La dirección debe empezar con `http://`, no `https://`.
 
 ## Publicación
