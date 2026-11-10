@@ -13,7 +13,7 @@ visibles en el menú:
 
 | Sección | Contenido |
 |---|---|
-| Inicio | Portada con foto, cifras clave, descripción y enlaces |
+| Inicio | Portada con video de fondo, cifras clave, descripción y enlaces |
 | 2026 | Registro de la edición: programa por día, coros, himno, fotos y videos |
 | Historia | Hitos, dos carruseles de fotos, mapa de países y diferenciales |
 | Quiénes somos | Equipo organizador (cinco personas) |
@@ -68,7 +68,8 @@ se hace el cambio de titular). Una vez registrado:
 
 - Hay 65 imágenes `.jpg` (8,9 MB) que no se usan: las páginas cargan solo las versiones
   `.webp`. La única `.jpg` en uso es `assets/img/og-image.jpg`.
-- Sin uso en las páginas: `assets/js/goal-accordion.js` y sus estilos `.goal-*` en
+- Sin uso en las páginas: `assets/img/hero-home-1400.webp` y `hero-home-2000.webp` (la
+  portada ahora usa video), `assets/js/goal-accordion.js` y sus estilos `.goal-*` en
   `style.css`, `assets/data/programa.json` y `assets/img/world-map-inline.svg`.
 
 **Titularidad.** El repositorio está en una cuenta personal de GitHub y la cuenta de
@@ -89,7 +90,8 @@ _data/
   i18n.yml               Ruta y etiqueta de cada sección, por idioma
   edicion2026.yml        Toda la información de la edición 2026
 assets/css/              style.css (base), mobile.css, home-hero.css, edicion-2026.css
-assets/js/               header-shrink, menu, reveal, carousel, galeria
+assets/js/               header-shrink, menu, reveal, carousel, galeria, hero-video
+assets/video/            hero-home.mp4 (video de fondo de la portada)
 _tools/optimizar_fotos.py  Convierte fotos a WebP (la carpeta con guion bajo no se publica)
 es/  en/  fr/            Páginas de cada idioma
 index.html               Redirige según el idioma del navegador (fr, en o es por defecto)
@@ -198,12 +200,12 @@ muestra fechas tentativas).
 - **Banner de foto** (`.photo-band`): foto de fondo, degradé y texto encima; se usa en
   Historia (`historia-bg.webp`) y en la página 404 (`hero-aconcagua.webp`). Tiene una relación 2,54:1 y un ancho máximo de 1568 px, que es
   la resolución real de la foto; más ancho se vería borroso.
-- **Portada**: `.hero-photo-band` con la foto en `hero-home-1400.webp` y
-  `hero-home-2000.webp` (`srcset`). El título se ajusta al ancho de la pantalla con `clamp()`
-  (`home-hero.css`).
-
-## Componentes
-
+- **Portada**: `.hero-photo-band` con un video de fondo (`assets/video/hero-home.mp4`,
+  1280×720, sin audio, unos 2 min 30 s en bucle, 11,5 MB) sobre el mismo velo oscuro que usaba
+  la foto. `assets/img/hero-home-poster.jpg` es el *poster*: se ve mientras carga el video y
+  queda fija si la persona tiene activado «reducir movimiento» o el ahorro de datos
+  (`assets/js/hero-video.js`). Para cambiar el video, reemplazar esos dos archivos con los
+  mismos nombres. En celular se ve solo el recorte central, porque la pantalla es vertical.
 - **Carruseles de fotos** (`.carousel`, `assets/js/carousel.js`): galería horizontal con
   flechas y deslizamiento táctil. Historia tiene dos: el de *Nuestros primeros acordes*
   (19 fotos, `assets/img/carousel2/`) y el de *Nuestro canto se sigue expandiendo* (38 fotos,

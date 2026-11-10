@@ -33,7 +33,7 @@ _data/
   i18n.yml               Rutas y etiquetas del menú, por idioma
   edicion2026.yml        Programa, coros, fotos y videos de la edición 2026
 _tools/                  Utilidades de mantenimiento (no se publican)
-assets/                  Estilos, scripts, imágenes y audio
+assets/                  Estilos, scripts, imágenes, audio y video
 es/  en/  fr/            Contenido de cada página, por idioma
 index.html               Redirige al idioma del navegador
 ```

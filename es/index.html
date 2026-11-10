@@ -8,16 +8,17 @@ description: "Cantapueblo, La Fiesta Coral de Latinoamérica. Encuentro coral in
 <link rel="stylesheet" href="{{ '/assets/css/home-hero.css' | relative_url }}">
 
 <div class="hero-photo-band">
-  <img class="hero-bg-photo" fetchpriority="high"
-       src="{{ '/assets/img/hero-home-1400.webp' | relative_url }}"
-       srcset="{{ '/assets/img/hero-home-1400.webp' | relative_url }} 1400w, {{ '/assets/img/hero-home-2000.webp' | relative_url }} 2000w"
-       sizes="100vw" alt="Coros participantes con banderas de sus países al pie del Cerro Aconcagua">
+  <video class="hero-bg-photo hero-bg-video" autoplay muted loop playsinline preload="metadata"
+         poster="{{ '/assets/img/hero-home-poster.jpg' | relative_url }}" aria-hidden="true" tabindex="-1">
+    <source src="{{ '/assets/video/hero-home.mp4' | relative_url }}" type="video/mp4">
+  </video>
   <div class="hero-overlay"></div>
   <section class="hero hero-on-photo">
     <h1>La Fiesta Coral de Latinoamérica</h1>
     <p class="tagline">Un encuentro internacional que canta la amistad entre los pueblos.</p>
   </section>
 </div>
+<script src="{{ '/assets/js/hero-video.js' | relative_url }}" defer></script>
 
 <section class="section section-feature tint-cian reveal next-edition">
   <div class="section-inner">

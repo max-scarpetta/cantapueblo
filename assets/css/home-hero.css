@@ -63,3 +63,12 @@
 @media (max-width: 720px) {
   .next-dates { grid-template-columns: 1fr; }
 }
+
+/* Video de fondo: nítido y con sus colores, bajo un velo oscuro parejo (como el de la
+   Filarmónica de Berlín) que lo pasa a segundo plano. Un poco más oscuro abajo, donde van
+   el título y el subtítulo. */
+.hero-photo-band .hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.3) 100%),
+    rgba(0, 0, 0, 0.55);
+}
