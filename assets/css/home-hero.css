@@ -72,3 +72,12 @@
     linear-gradient(180deg, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.3) 100%),
     rgba(0, 0, 0, 0.55);
 }
+
+/* En pantallas anchas la portada toma la proporción del video (16:9), para que se vea
+   completo, sin recortes arriba ni abajo. En celular sigue ocupando casi toda la pantalla. */
+@media (min-width: 721px) {
+  .hero-photo-band {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+}
