@@ -64,20 +64,28 @@
   .next-dates { grid-template-columns: 1fr; }
 }
 
-/* Video de fondo: nítido y con sus colores, bajo un velo oscuro parejo (como el de la
-   Filarmónica de Berlín) que lo pasa a segundo plano. Un poco más oscuro abajo, donde van
-   el título y el subtítulo. */
+/* Video de fondo: con sus colores, sin filtro. Solo se oscurece el pie, con un degradé
+   que desaparece a mitad de altura, para que se lean el título y el subtítulo. */
 .hero-photo-band .hero-overlay {
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.3) 100%),
-    rgba(0, 0, 0, 0.55);
+  background: linear-gradient(to top,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.25) 28%,
+    rgba(0, 0, 0, 0) 50%);
 }
+.hero-on-photo h1,
+.hero-on-photo .tagline { text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45); }
 
-/* En pantallas anchas la portada toma la proporción del video (16:9), para que se vea
-   completo, sin recortes arriba ni abajo. En celular sigue ocupando casi toda la pantalla. */
+/* En pantallas anchas la portada tiene un alto contenido (formato panorámico, más bajo que
+   el video): el video se recorta un poco arriba y abajo. En celular sigue ocupando casi toda
+   la pantalla. */
 @media (min-width: 721px) {
   .hero-photo-band {
     min-height: 0;
-    aspect-ratio: 16 / 9;
+    height: clamp(380px, 40vw, 620px);
   }
 }
+
+/* El video va en su propia capa de composición, para que el header de vidrio (con desenfoque)
+   y el resto de la página no obliguen al navegador a redibujarlo en cada cuadro. */
+.hero-photo-band { isolation: isolate; contain: paint; }
+.hero-bg-video { transform: translateZ(0); backface-visibility: hidden; }

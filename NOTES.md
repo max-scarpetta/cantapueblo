@@ -213,8 +213,9 @@ muestra fechas tentativas).
   Historia (`historia-bg.webp`) y en la página 404 (`hero-aconcagua.webp`). Tiene una relación 2,54:1 y un ancho máximo de 1568 px, que es
   la resolución real de la foto; más ancho se vería borroso.
 - **Portada**: `.hero-photo-band` con un video de fondo (`assets/video/hero-home.mp4`,
-  1280×720, sin audio, unos 2 min 30 s en bucle, 11,5 MB) sobre el mismo velo oscuro que usaba
-  la foto. `assets/img/hero-home-poster.jpg` es el *poster*: se ve mientras carga el video y
+  1280×720, sin audio, unos 2 minutos en bucle, 14,6 MB), con sus colores y sin filtro: solo un
+  degradé oscuro en el pie para que se lea el título. En pantallas de más de 720 px la portada
+  tiene un alto de entre 380 y 620 px (40 % del ancho), en formato panorámico. `assets/img/hero-home-poster.jpg` es el *poster*: se ve mientras carga el video y
   queda fija si la persona tiene activado «reducir movimiento» o el ahorro de datos
   (`assets/js/hero-video.js`). Para cambiar el video, reemplazar esos dos archivos con los
   mismos nombres. En celular se ve solo el recorte central, porque la pantalla es vertical.

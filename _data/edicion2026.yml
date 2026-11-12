@@ -195,7 +195,7 @@ choirs:
     director: "Simón Abecasis"
   - id: ninos-uncuyo
     group: mendoza
-    name: "Coro de Niños UNCUYO"
+    name: "Coro de Niños y Jóvenes UNCUYO"
     origin: mendoza
     director: "Ángela Burgoa"
   - id: jaboneria
@@ -303,7 +303,7 @@ days:
     videos:
       - file: dia11-ninos-uncuyo.mp4
         poster: dia11-ninos-uncuyo-poster.webp
-        title: { es: "Coro de Niños UNCUYO", en: "Coro de Niños UNCUYO", fr: "Coro de Niños UNCUYO" }
+        title: { es: "Coro de Niños y Jóvenes UNCUYO", en: "Coro de Niños y Jóvenes UNCUYO", fr: "Coro de Niños y Jóvenes UNCUYO" }
       - file: dia11-camara-uncuyo.mp4
         poster: dia11-camara-uncuyo-poster.webp
         title: { es: "Coro de Cámara UNCUYO", en: "Coro de Cámara UNCUYO", fr: "Coro de Cámara UNCUYO" }
