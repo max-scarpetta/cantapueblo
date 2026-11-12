@@ -305,6 +305,15 @@
   background: #000;
   display: block;
 }
+/* Videos grabados en vertical: mantienen su proporción, sin franjas negras */
+.edition-video.is-vertical video {
+  aspect-ratio: 9 / 16;
+  max-height: min(70vh, 520px);
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.edition-videos { align-items: start; }
 .edition-video figcaption {
   padding-top: 0.6rem;
   font-size: 0.85rem;
@@ -430,4 +439,66 @@
   .lightbox-nav { position: absolute; bottom: 1.2rem; }
   .lightbox-prev { left: 1.2rem; }
   .lightbox-next { right: 1.2rem; }
+}
+
+/* ---------- Ordenadores: fotos y videos más grandes ----------
+   En pantallas anchas, las galerías salen del ancho del texto (1120 px) y ocupan hasta
+   1280 px. Las fotos van de a tres por fila, todas del mismo tamaño; los videos van de a dos. */
+@media (min-width: 961px) {
+  .edition-media {
+    width: min(1280px, calc(100vw - 4rem));
+    margin-left: calc(50% - min(640px, 50vw - 2rem));
+  }
+  .edition-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: clamp(240px, 21vw, 330px);
+    grid-auto-flow: dense;
+    gap: 1rem;
+  }
+  .edition-photo {
+    aspect-ratio: auto;
+    height: 100%;
+    border-radius: 18px;
+  }
+
+  /* Videos de a dos por fila. Si el día tiene un video vertical, va en una tercera columna
+     a la derecha, con el alto de dos filas, y los horizontales lo rodean. */
+  .edition-videos {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: dense;
+    gap: 1.4rem;
+  }
+  .edition-videos:has(.is-vertical) { grid-template-columns: 1fr 1fr 0.63fr; }
+  .edition-video.is-vertical {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+  }
+  .edition-video.is-vertical video {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    aspect-ratio: auto;
+    object-fit: cover;
+  }
+  .edition-video iframe,
+  .edition-video video { border-radius: 18px; }
+
+  /* Tarjetas de coros, más anchas que el texto. Las que tienen foto van de a dos por fila
+     (foto grande); las que no tienen, de a tres. */
+  .edition-choir-grid {
+    width: min(1280px, calc(100vw - 4rem));
+    margin-left: calc(50% - min(640px, 50vw - 2rem));
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-flow: dense;
+    gap: 1.2rem;
+  }
+  .edition-choir { grid-column: span 2; }
+  .edition-choir:has(.edition-choir-photo) { grid-column: span 3; }
+  .edition-choir-body { padding: 1.3rem 1.5rem 1.5rem; }
+  .edition-choir h4 { font-size: 1.2rem; }
 }

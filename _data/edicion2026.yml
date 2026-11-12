@@ -28,6 +28,8 @@
 #            title: { es: "Concierto Final", en: "Final Concert", fr: "Concert final" }
 #   - Archivo propio (clips cortos, idealmente < 20 MB) en assets/video/2026/:
 #          - file: clip-cantata.mp4
+#            poster: clip-cantata-poster.webp   (opcional: imagen antes de dar play)
+#            vertical: true                     (opcional: si se grabó en vertical)
 #
 # LOGOS DE APOYO: al final del archivo, lista  supporters  (instrucciones allí).
 #
@@ -287,8 +289,34 @@ days:
         venue: { name: "Nave UNCUYO", address: "Maza y Av. España, Ciudad" }
         access: tickets
         choirs: [ninos-uncuyo, camara-uncuyo, amicana, vozeres]
-    photos: []
-    videos: []
+    photos:
+      - file: dia11-camara-uncuyo.webp
+        caption: { es: "Coro de Cámara UNCUYO en la Nave UNCUYO", en: "Coro de Cámara UNCUYO at Nave UNCUYO", fr: "Le Coro de Cámara UNCUYO à la Nave UNCUYO" }
+      - file: dia11-vozeres-02.webp
+        caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+      - file: dia11-vozeres-01.webp
+        caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+      - file: dia11-vozeres-03.webp
+        caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+      - file: dia11-vozeres-04.webp
+        caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+    videos:
+      - file: dia11-ninos-uncuyo.mp4
+        poster: dia11-ninos-uncuyo-poster.webp
+        title: { es: "Coro de Niños UNCUYO", en: "Coro de Niños UNCUYO", fr: "Coro de Niños UNCUYO" }
+      - file: dia11-camara-uncuyo.mp4
+        poster: dia11-camara-uncuyo-poster.webp
+        title: { es: "Coro de Cámara UNCUYO", en: "Coro de Cámara UNCUYO", fr: "Coro de Cámara UNCUYO" }
+      - file: dia11-vozeres-vertical.mp4
+        poster: dia11-vozeres-vertical-poster.webp
+        vertical: true
+        title: { es: "Vózeres Ensamble Vocal", en: "Vózeres Ensamble Vocal", fr: "Vózeres Ensamble Vocal" }
+      - file: dia11-amicana.mp4
+        poster: dia11-amicana-poster.webp
+        title: { es: "Coro Amicana", en: "Coro Amicana", fr: "Coro Amicana" }
+      - file: dia11-vozeres-03.mp4
+        poster: dia11-vozeres-03-poster.webp
+        title: { es: "Vózeres Ensamble Vocal", en: "Vózeres Ensamble Vocal", fr: "Vózeres Ensamble Vocal" }
 
   - id: dia12
     num: 12

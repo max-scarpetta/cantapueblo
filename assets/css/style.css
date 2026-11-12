@@ -812,3 +812,9 @@ a:focus-visible, button:focus-visible {
   .carousel-item { width: 82vw; }
   .carousel-item img { height: 240px; }
 }
+
+/* Ordenadores: fotos de los carruseles (Historia) más grandes */
+@media (min-width: 961px) {
+  .carousel-item { width: min(50vw, 684px); }
+  .carousel-item img { height: clamp(324px, 30.6vw, 468px); }
+}
