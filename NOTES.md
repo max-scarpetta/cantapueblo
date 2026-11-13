@@ -4,7 +4,7 @@ Referencia de trabajo para mantener y ampliar el sitio. Es documentación intern
 público del proyecto está en [`README.md`](./README.md). Este archivo no se publica (figura en
 `exclude` de `_config.yml`).
 
-Última revisión: 10 de noviembre de 2026.
+Última revisión: 13 de noviembre de 2026.
 
 ## Estado actual
 
@@ -25,10 +25,10 @@ La sección *Programa* está oculta (ver [Programa oculto](#programa-oculto)).
 
 **Después del cambio de dominio**
 
-- Probar que los enlaces viejos de `mxscvz.github.io/cantapueblo/…` lleven al dominio nuevo.
-  Si no redirigen, los enlaces ya compartidos (por ejemplo en mensajes viejos) quedan rotos.
-- Actualizar el link de la biografía de Instagram y el campo *Website* del repositorio en
-  GitHub (hoy dice `mxscvz.github.io/cantapueblo/`).
+- Los enlaces viejos de `mxscvz.github.io/cantapueblo/…` ya no funcionan: el usuario de
+  GitHub pasó de `mxscvz` a `max-scarpetta` (13/11/2026) y GitHub no redirige los sitios de
+  Pages. Reemplazar por el dominio nuevo los que sigan compartidos (por ejemplo en mensajes viejos).
+- Actualizar el link de la biografía de Instagram.
 - Confirmar que *Enforce HTTPS* quedó activado en *Settings → Pages*.
 
 **Contenido a confirmar con la organización**
@@ -82,7 +82,9 @@ organización o dar acceso a más de una persona del equipo.
   gracia, cualquiera puede registrarlo.
 - **Cómo está conectado:** en NIC, el dominio está delegado a un proveedor de DNS. Ahí hay
   cuatro registros `A` a `185.199.108.153`, `185.199.109.153`, `185.199.110.153` y
-  `185.199.111.153` (GitHub Pages) y un `CNAME` de `www` a `mxscvz.github.io`. En el repo, el
+  `185.199.111.153` (GitHub Pages), un `CNAME` de `www` a `max-scarpetta.github.io` y un `TXT`
+  `_github-pages-challenge-max-scarpetta` que verifica el dominio en la cuenta de GitHub (si
+  cambia el usuario, cambian el `CNAME` y el nombre del `TXT`). En el repo, el
   archivo `CNAME` tiene el dominio y `_config.yml` tiene `baseurl: ""` y
   `url: "https://cantapueblo.musica.ar"`. Si alguna vez se vuelve a la dirección de GitHub,
   hay que borrar `CNAME` y volver a poner `baseurl: "/cantapueblo"`.
