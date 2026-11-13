@@ -286,6 +286,21 @@
   display: block;
   transition: transform 0.4s ease;
 }
+.edition-photo { position: relative; }
+/* Epígrafe sobre el pie de la foto (nombre del coro o de la persona) */
+.edition-photo-cap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.2rem 0.9rem 0.75rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0));
+  color: #fff;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  text-align: left;
+  pointer-events: none;
+}
 .edition-photo:hover img,
 .edition-photo:focus-visible img { transform: scale(1.05); }
 .edition-photo:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
@@ -428,6 +443,7 @@
 .supporter.is-dark { background: #3a3a3a; }
 
 @media (max-width: 720px) {
+  .edition-photo-cap { font-size: 0.68rem; padding: 1.6rem 0.55rem 0.5rem; }
   .supporters-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
   .supporter { height: 96px; padding: 0.7rem 0.8rem; }
   .edition-events > li { grid-template-columns: 3.4rem 1fr; gap: 0.7rem; }

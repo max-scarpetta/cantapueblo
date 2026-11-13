@@ -290,16 +290,38 @@ days:
         access: tickets
         choirs: [ninos-uncuyo, camara-uncuyo, amicana, vozeres]
     photos:
+      - file: dia11-alejandro-scarpetta.webp
+        caption: { es: "Alejandro Scarpetta", en: "Alejandro Scarpetta", fr: "Alejandro Scarpetta" }
+      - file: dia11-florencia-scarpetta.webp
+        caption: { es: "Florencia Scarpetta", en: "Florencia Scarpetta", fr: "Florencia Scarpetta" }
+      - file: dia11-vozeres-pro-1.webp
+        caption: { es: "Edgard González Salzmann, director de Vózeres Ensamble Vocal", en: "Edgard González Salzmann, conductor of Vózeres Ensamble Vocal", fr: "Edgard González Salzmann, chef de Vózeres Ensamble Vocal" }
+      - file: dia11-vozeres-pro-2.webp
+        caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+      - file: dia11-vozeres-pro-3.webp
+        caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+      - file: dia11-vozeres-pro-4.webp
+        caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+      - file: dia11-vozeres-5.webp
+        caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+      - file: dia11-vozeres-7.webp
+        caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+      - file: dia11-diego-martin.webp
+        caption: { es: "Diego Martín, director del Coro de Cámara UNCUYO", en: "Diego Martín, conductor of Coro de Cámara UNCUYO", fr: "Diego Martín, chef du Coro de Cámara UNCUYO" }
+      - file: dia11-camara-uncuyo-pro-1.webp
+        caption: { es: "Coro de Cámara UNCUYO", en: "Coro de Cámara UNCUYO", fr: "Coro de Cámara UNCUYO" }
+      - file: dia11-camara-uncuyo-pro-2.webp
+        caption: { es: "Coro de Cámara UNCUYO", en: "Coro de Cámara UNCUYO", fr: "Coro de Cámara UNCUYO" }
       - file: dia11-camara-uncuyo.webp
         caption: { es: "Coro de Cámara UNCUYO en la Nave UNCUYO", en: "Coro de Cámara UNCUYO at Nave UNCUYO", fr: "Le Coro de Cámara UNCUYO à la Nave UNCUYO" }
-      - file: dia11-vozeres-02.webp
-        caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
-      - file: dia11-vozeres-01.webp
-        caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
-      - file: dia11-vozeres-03.webp
-        caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
-      - file: dia11-vozeres-04.webp
-        caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+      - file: dia11-simon-abecasis.webp
+        caption: { es: "Simón Abecasis, director del Coro Amicana", en: "Simón Abecasis, conductor of Coro Amicana", fr: "Simón Abecasis, chef du Coro Amicana" }
+      - file: dia11-amicana.webp
+        caption: { es: "Coro Amicana", en: "Coro Amicana", fr: "Coro Amicana" }
+      - file: dia11-angela-burgoa.webp
+        caption: { es: "Ángela Burgoa, directora del Coro de Niños y Jóvenes UNCUYO", en: "Ángela Burgoa, conductor of Coro de Niños y Jóvenes UNCUYO", fr: "Ángela Burgoa, cheffe du Coro de Niños y Jóvenes UNCUYO" }
+      - file: dia11-ninos-jovenes-uncuyo.webp
+        caption: { es: "Coro de Niños y Jóvenes UNCUYO", en: "Coro de Niños y Jóvenes UNCUYO", fr: "Coro de Niños y Jóvenes UNCUYO" }
     videos:
       - file: dia11-ninos-uncuyo.mp4
         poster: dia11-ninos-uncuyo-poster.webp
