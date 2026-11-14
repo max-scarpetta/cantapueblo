@@ -22,10 +22,10 @@
     <p class="edition-note">{{ ui.note }}</p>
 
     <nav class="edition-jump" aria-label="{{ ui.title }}">
-      <a href="#coros">{{ ui.jump_choirs }}</a>
       {%- for day in ed.days %}
       <a href="#{{ day.id }}">{{ day.weekday[lang] }} {{ day.num }}</a>
       {%- endfor %}
+      <a href="#coros">{{ ui.jump_choirs }}</a>
     </nav>
 
     <div class="audio-block edition-anthem glass">
@@ -34,35 +34,6 @@
         <source src="{{ '/assets/audio/el-canto-grande.mp3' | relative_url }}" type="audio/mpeg">
       </audio>
     </div>
-  </div>
-</section>
-
-<section class="section edition-choirs reveal" id="coros" style="padding-top: 1rem;">
-  <div class="section-inner">
-    <h2>{{ ui.choirs_title }}</h2>
-    <p>{{ ui.choirs_intro }}</p>
-
-    {%- for g in groups %}
-    {%- assign group_choirs = ed.choirs | where: "group", g %}
-    {%- if group_choirs.size > 0 %}
-    {%- assign group_key = "group_" | append: g %}
-    <h3 class="edition-group-title">{{ ui[group_key] }} <span>{{ group_choirs.size }}</span></h3>
-    <div class="edition-choir-grid">
-      {%- for c in group_choirs %}
-      <article class="edition-choir glass glass-hover" id="coro-{{ c.id }}">
-        {%- if c.photo %}
-        <img loading="lazy" class="edition-choir-photo" src="{{ '/assets/img/2026/coros/' | append: c.photo | relative_url }}" alt="{{ c.name | escape }}">
-        {%- endif %}
-        <div class="edition-choir-body">
-          <h4>{{ c.name }}</h4>
-          <span class="edition-choir-origin">{{ ed.origins[c.origin][lang] }}</span>
-          <span class="edition-choir-dir">{{ ui.conductor }}: {{ c.director }}</span>
-        </div>
-      </article>
-      {%- endfor %}
-    </div>
-    {%- endif %}
-    {%- endfor %}
   </div>
 </section>
 
@@ -146,6 +117,35 @@
   </div>
 </section>
 {%- endfor %}
+
+<section class="section edition-choirs reveal" id="coros">
+  <div class="section-inner">
+    <h2>{{ ui.choirs_title }}</h2>
+    <p>{{ ui.choirs_intro }}</p>
+
+    {%- for g in groups %}
+    {%- assign group_choirs = ed.choirs | where: "group", g %}
+    {%- if group_choirs.size > 0 %}
+    {%- assign group_key = "group_" | append: g %}
+    <h3 class="edition-group-title">{{ ui[group_key] }} <span>{{ group_choirs.size }}</span></h3>
+    <div class="edition-choir-grid">
+      {%- for c in group_choirs %}
+      <article class="edition-choir glass glass-hover" id="coro-{{ c.id }}">
+        {%- if c.photo %}
+        <img loading="lazy" class="edition-choir-photo" src="{{ '/assets/img/2026/coros/' | append: c.photo | relative_url }}" alt="{{ c.name | escape }}">
+        {%- endif %}
+        <div class="edition-choir-body">
+          <h4>{{ c.name }}</h4>
+          <span class="edition-choir-origin">{{ ed.origins[c.origin][lang] }}</span>
+          <span class="edition-choir-dir">{{ ui.conductor }}: {{ c.director }}</span>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+    {%- endfor %}
+  </div>
+</section>
 
 {%- if hl_photos > 0 or hl_videos > 0 %}
 <section class="section reveal" id="resumen">
