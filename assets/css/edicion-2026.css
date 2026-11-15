@@ -255,6 +255,7 @@
 
 /* Fotos y videos */
 .edition-media { margin-top: 1.8rem; }
+.edition-event .edition-media { margin-top: 1.4rem; }
 .edition-sub {
   display: block;
   margin-bottom: 0.9rem;
@@ -314,21 +315,35 @@
 .edition-video iframe,
 .edition-video video {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   border: none;
   border-radius: 14px;
   background: #000;
   display: block;
 }
 /* Videos grabados en vertical: mantienen su proporción, sin franjas negras */
-.edition-video.is-vertical video {
-  aspect-ratio: 9 / 16;
-  max-height: min(70vh, 520px);
-  width: auto;
-  max-width: 100%;
-  margin: 0 auto;
-}
 .edition-videos { align-items: start; }
+/* Videos con su orientación original (la detecta assets/js/video-rows.js).
+   Tamaños fijos: todos los horizontales iguales, todos los verticales iguales.
+   Las filas se completan como entren y se centran. */
+.edition-videos.is-sized {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.2rem 18px;
+}
+.edition-videos.is-sized .edition-video video { aspect-ratio: auto; object-fit: contain; width: 100%; }
+.edition-videos.is-sized .edition-video.is-landscape { width: calc((100% - 18px) / 2); }
+.edition-videos.is-sized .edition-video.is-landscape video { aspect-ratio: 16 / 9; }
+.edition-videos.is-sized .edition-video.is-portrait { width: 280px; }
+.edition-videos.is-sized .edition-video.is-portrait video { aspect-ratio: 9 / 16; }
+@media (max-width: 960px) {
+  .edition-videos.is-sized { gap: 0.8rem 10px; }
+  .edition-videos.is-sized .edition-video.is-landscape { width: 100%; }
+  .edition-videos.is-sized .edition-video.is-portrait { width: calc((100% - 10px) / 2); }
+}
 .edition-video figcaption {
   padding-top: 0.6rem;
   font-size: 0.85rem;
@@ -443,7 +458,7 @@
 .supporter.is-dark { background: #3a3a3a; }
 
 @media (max-width: 720px) {
-  .edition-photo-cap { font-size: 0.68rem; padding: 1.6rem 0.55rem 0.5rem; }
+    .edition-photo-cap { font-size: 0.68rem; padding: 1.6rem 0.55rem 0.5rem; }
   .supporters-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
   .supporter { height: 96px; padding: 0.7rem 0.8rem; }
   .edition-events > li { grid-template-columns: 3.4rem 1fr; gap: 0.7rem; }
@@ -458,49 +473,27 @@
 }
 
 /* ---------- Ordenadores: fotos y videos más grandes ----------
-   En pantallas anchas, las galerías salen del ancho del texto (1120 px) y ocupan hasta
-   1280 px. Las fotos van de a tres por fila, todas del mismo tamaño; los videos van de a dos. */
+   Fotos y videos van debajo de cada concierto, en grillas parejas: todos del mismo tamaño.
+   La cantidad de columnas (2 o 3) la elige la plantilla según cuántos haya. */
 @media (min-width: 961px) {
-  .edition-media {
+  /* Las fotos y videos de cada concierto salen del ancho de la columna del concierto y ocupan
+     hasta 1280 px, centrados en la página. La columna del concierto está corrida 2,75rem a la
+     derecha del centro (por la columna de la hora: 4,5rem + 1rem de separación). */
+  .edition-event .edition-media {
     width: min(1280px, calc(100vw - 4rem));
-    margin-left: calc(50% - min(640px, 50vw - 2rem));
+    max-width: none;
+    margin-left: calc(50% - min(640px, 50vw - 2rem) - 2.75rem);
   }
-  .edition-gallery {
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: clamp(240px, 21vw, 330px);
-    grid-auto-flow: dense;
-    gap: 1rem;
-  }
-  .edition-photo {
-    aspect-ratio: auto;
-    height: 100%;
-    border-radius: 18px;
-  }
+  .edition-gallery { gap: 1rem; }
+  /* Fotos de a 3 por fila; la última fila incompleta queda centrada (ej. 3/3/2). */
+  .edition-gallery { display: flex; flex-wrap: wrap; justify-content: center; }
+  .edition-gallery.cols-3 .edition-photo { width: calc((100% - 2rem) / 3); }
+  .edition-gallery.cols-2 .edition-photo { width: calc((100% - 1rem) / 2); }
+  .edition-photo { aspect-ratio: 4 / 3; border-radius: 18px; }
 
-  /* Videos de a dos por fila. Si el día tiene un video vertical, va en una tercera columna
-     a la derecha, con el alto de dos filas, y los horizontales lo rodean. */
-  .edition-videos {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-flow: dense;
-    gap: 1.4rem;
-  }
-  .edition-videos:has(.is-vertical) { grid-template-columns: 1fr 1fr 0.63fr; }
-  .edition-video.is-vertical {
-    grid-column: 3;
-    grid-row: 1 / span 2;
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-  }
-  .edition-video.is-vertical video {
-    flex: 1;
-    min-height: 0;
-    width: 100%;
-    height: 100%;
-    max-height: none;
-    aspect-ratio: auto;
-    object-fit: cover;
-  }
+  .edition-videos { gap: 1.2rem; }
+  .edition-videos.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .edition-videos.cols-2 { grid-template-columns: repeat(2, 1fr); }
   .edition-video iframe,
   .edition-video video { border-radius: 18px; }
 

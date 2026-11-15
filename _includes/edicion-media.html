@@ -10,10 +10,14 @@
 {%- assign n_photos = include.photos | size -%}
 {%- assign n_videos = include.videos | size -%}
 
+{%- assign mod3_p = n_photos | modulo: 3 -%}
+{%- assign mod2_p = n_photos | modulo: 2 -%}
+{%- assign cols_p = 3 -%}
+{%- if n_photos == 4 or n_photos == 2 %}{% assign cols_p = 2 %}{% endif -%}
 {%- if n_photos > 0 %}
 <div class="edition-media">
   <span class="edition-sub">{{ include.ui.photos }}</span>
-  <div class="edition-gallery">
+  <div class="edition-gallery cols-{{ cols_p }}">
     {%- for photo in include.photos %}
     {%- assign cap = photo.caption[lang] %}
     {%- assign alt = cap | default: include.alt_base %}
@@ -28,13 +32,16 @@
 </div>
 {%- endif %}
 
+{%- assign mod3_v = n_videos | modulo: 3 -%}
+{%- assign mod2_v = n_videos | modulo: 2 -%}
+{%- if mod3_v == 0 or mod2_v != 0 %}{% assign cols_v = 3 %}{% else %}{% assign cols_v = 2 %}{% endif -%}
 {%- if n_videos > 0 %}
 <div class="edition-media">
   <span class="edition-sub">{{ include.ui.videos }}</span>
-  <div class="edition-videos">
+  <div class="edition-videos cols-{{ cols_v }}">
     {%- for video in include.videos %}
     {%- assign vtitle = video.title[lang] | default: include.alt_base %}
-    <figure class="edition-video{% if video.vertical %} is-vertical{% endif %}">
+    <figure class="edition-video">
       {%- if video.youtube %}
       <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/{{ video.youtube }}"
               title="{{ vtitle | escape }}" referrerpolicy="strict-origin-when-cross-origin"

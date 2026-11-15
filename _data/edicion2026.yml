@@ -8,7 +8,9 @@
 #   1. Subí la foto (.webp) a  assets/img/2026/coros/  — recorte horizontal 2:1 (ej. 960×480 px)
 #   2. En el coro, agregá la línea:   photo: nacer-vocal.webp
 #
-# FOTOS DEL FESTIVAL (las que saque Flor), por día
+# FOTOS DEL FESTIVAL: van debajo de cada concierto (dentro del evento, mismo formato).
+# También se pueden poner a nivel del día, si no corresponden a un concierto.
+# Por día
 #   1. Subí la imagen a  assets/img/2026/
 #   2. En el día, reemplazá  photos: []  por:
 #
@@ -29,7 +31,7 @@
 #   - Archivo propio (clips cortos, idealmente < 20 MB) en assets/video/2026/:
 #          - file: clip-cantata.mp4
 #            poster: clip-cantata-poster.webp   (opcional: imagen antes de dar play)
-#            vertical: true                     (opcional: si se grabó en vertical)
+#            (los videos verticales se recortan solos para verse del mismo tamaño que el resto)
 #
 # LOGOS DE APOYO: al final del archivo, lista  supporters  (instrucciones allí).
 #
@@ -289,54 +291,52 @@ days:
         venue: { name: "Nave UNCUYO", address: "Maza y Av. España, Ciudad" }
         access: tickets
         choirs: [ninos-uncuyo, camara-uncuyo, amicana, vozeres]
-    photos:
-      - file: dia11-alejandro-scarpetta.webp
-        caption: { es: "Alejandro Scarpetta", en: "Alejandro Scarpetta", fr: "Alejandro Scarpetta" }
-      - file: dia11-florencia-scarpetta.webp
-        caption: { es: "Florencia Scarpetta", en: "Florencia Scarpetta", fr: "Florencia Scarpetta" }
-      - file: dia11-vozeres-pro-1.webp
-        caption: { es: "Edgard González Salzmann, director de Vózeres Ensamble Vocal", en: "Edgard González Salzmann, conductor of Vózeres Ensamble Vocal", fr: "Edgard González Salzmann, chef de Vózeres Ensamble Vocal" }
-      - file: dia11-vozeres-pro-4.webp
-        caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
-      - file: dia11-vozeres-5.webp
-        caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
-      - file: dia11-vozeres-pro-2.webp
-        caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
-      - file: dia11-vozeres-7.webp
-        caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
-      - file: dia11-diego-martin.webp
-        caption: { es: "Diego Martín, director del Coro de Cámara UNCUYO", en: "Diego Martín, conductor of Coro de Cámara UNCUYO", fr: "Diego Martín, chef du Coro de Cámara UNCUYO" }
-      - file: dia11-camara-uncuyo-pro-1.webp
-        caption: { es: "Coro de Cámara UNCUYO", en: "Coro de Cámara UNCUYO", fr: "Coro de Cámara UNCUYO" }
-      - file: dia11-camara-uncuyo-pro-2.webp
-        caption: { es: "Coro de Cámara UNCUYO", en: "Coro de Cámara UNCUYO", fr: "Coro de Cámara UNCUYO" }
-      - file: dia11-camara-uncuyo.webp
-        caption: { es: "Coro de Cámara UNCUYO en la Nave UNCUYO", en: "Coro de Cámara UNCUYO at Nave UNCUYO", fr: "Le Coro de Cámara UNCUYO à la Nave UNCUYO" }
-      - file: dia11-simon-abecasis.webp
-        caption: { es: "Simón Abecasis, director del Coro Amicana", en: "Simón Abecasis, conductor of Coro Amicana", fr: "Simón Abecasis, chef du Coro Amicana" }
-      - file: dia11-amicana.webp
-        caption: { es: "Coro Amicana", en: "Coro Amicana", fr: "Coro Amicana" }
-      - file: dia11-angela-burgoa.webp
-        caption: { es: "Ángela Burgoa, directora del Coro de Niños y Jóvenes UNCUYO", en: "Ángela Burgoa, conductor of Coro de Niños y Jóvenes UNCUYO", fr: "Ángela Burgoa, cheffe du Coro de Niños y Jóvenes UNCUYO" }
-      - file: dia11-ninos-jovenes-uncuyo.webp
-        caption: { es: "Coro de Niños y Jóvenes UNCUYO", en: "Coro de Niños y Jóvenes UNCUYO", fr: "Coro de Niños y Jóvenes UNCUYO" }
-    videos:
-      - file: dia11-ninos-uncuyo.mp4
-        poster: dia11-ninos-uncuyo-poster.webp
-        title: { es: "Coro de Niños y Jóvenes UNCUYO", en: "Coro de Niños y Jóvenes UNCUYO", fr: "Coro de Niños y Jóvenes UNCUYO" }
-      - file: dia11-camara-uncuyo.mp4
-        poster: dia11-camara-uncuyo-poster.webp
-        title: { es: "Coro de Cámara UNCUYO", en: "Coro de Cámara UNCUYO", fr: "Coro de Cámara UNCUYO" }
-      - file: dia11-vozeres-vertical.mp4
-        poster: dia11-vozeres-vertical-poster.webp
-        vertical: true
-        title: { es: "Vózeres Ensamble Vocal", en: "Vózeres Ensamble Vocal", fr: "Vózeres Ensamble Vocal" }
-      - file: dia11-amicana.mp4
-        poster: dia11-amicana-poster.webp
-        title: { es: "Coro Amicana", en: "Coro Amicana", fr: "Coro Amicana" }
-      - file: dia11-vozeres-03.mp4
-        poster: dia11-vozeres-03-poster.webp
-        title: { es: "Vózeres Ensamble Vocal", en: "Vózeres Ensamble Vocal", fr: "Vózeres Ensamble Vocal" }
+        photos:
+          - file: dia11-alejandro-scarpetta.webp
+            caption: { es: "Alejandro Scarpetta", en: "Alejandro Scarpetta", fr: "Alejandro Scarpetta" }
+          - file: dia11-florencia-scarpetta.webp
+            caption: { es: "Florencia Scarpetta", en: "Florencia Scarpetta", fr: "Florencia Scarpetta" }
+          - file: dia11-vozeres-pro-1.webp
+            caption: { es: "Edgard González Salzmann, director de Vózeres Ensamble Vocal", en: "Edgard González Salzmann, conductor of Vózeres Ensamble Vocal", fr: "Edgard González Salzmann, chef de Vózeres Ensamble Vocal" }
+          - file: dia11-vozeres-pro-4.webp
+            caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+          - file: dia11-vozeres-5.webp
+            caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+          - file: dia11-vozeres-pro-2.webp
+            caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+          - file: dia11-vozeres-7.webp
+            caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+          - file: dia11-diego-martin.webp
+            caption: { es: "Diego Martín, director del Coro de Cámara UNCUYO", en: "Diego Martín, conductor of Coro de Cámara UNCUYO", fr: "Diego Martín, chef du Coro de Cámara UNCUYO" }
+          - file: dia11-camara-uncuyo-pro-1.webp
+            caption: { es: "Coro de Cámara UNCUYO", en: "Coro de Cámara UNCUYO", fr: "Coro de Cámara UNCUYO" }
+          - file: dia11-camara-uncuyo-pro-2.webp
+            caption: { es: "Coro de Cámara UNCUYO", en: "Coro de Cámara UNCUYO", fr: "Coro de Cámara UNCUYO" }
+          - file: dia11-camara-uncuyo.webp
+            caption: { es: "Coro de Cámara UNCUYO en la Nave UNCUYO", en: "Coro de Cámara UNCUYO at Nave UNCUYO", fr: "Le Coro de Cámara UNCUYO à la Nave UNCUYO" }
+          - file: dia11-simon-abecasis.webp
+            caption: { es: "Simón Abecasis, director del Coro Amicana", en: "Simón Abecasis, conductor of Coro Amicana", fr: "Simón Abecasis, chef du Coro Amicana" }
+          - file: dia11-amicana.webp
+            caption: { es: "Coro Amicana", en: "Coro Amicana", fr: "Coro Amicana" }
+          - file: dia11-angela-burgoa.webp
+            caption: { es: "Ángela Burgoa, directora del Coro de Niños y Jóvenes UNCUYO", en: "Ángela Burgoa, conductor of Coro de Niños y Jóvenes UNCUYO", fr: "Ángela Burgoa, cheffe du Coro de Niños y Jóvenes UNCUYO" }
+          - file: dia11-ninos-jovenes-uncuyo.webp
+            caption: { es: "Coro de Niños y Jóvenes UNCUYO", en: "Coro de Niños y Jóvenes UNCUYO", fr: "Coro de Niños y Jóvenes UNCUYO" }
+        videos:
+          - file: dia11-vozeres-03.mp4
+            poster: dia11-vozeres-03-poster.webp
+            title: { es: "Vózeres Ensamble Vocal", en: "Vózeres Ensamble Vocal", fr: "Vózeres Ensamble Vocal" }
+          - file: dia11-camara-uncuyo.mp4
+            poster: dia11-camara-uncuyo-poster.webp
+            title: { es: "Coro de Cámara UNCUYO", en: "Coro de Cámara UNCUYO", fr: "Coro de Cámara UNCUYO" }
+          - file: dia11-amicana.mp4
+            poster: dia11-amicana-poster.webp
+            title: { es: "Coro Amicana", en: "Coro Amicana", fr: "Coro Amicana" }
+          - file: dia11-ninos-uncuyo.mp4
+            poster: dia11-ninos-uncuyo-poster.webp
+            title: { es: "Coro de Niños y Jóvenes UNCUYO", en: "Coro de Niños y Jóvenes UNCUYO", fr: "Coro de Niños y Jóvenes UNCUYO" }
+    photos: []
+    videos: []
 
   - id: dia12
     num: 12
@@ -347,16 +347,121 @@ days:
         venue: { name: "Espacio Cultural Julio Le Parc", room: "Sala Vilma Rupolo", address: "Av. Mitre esq. Godoy Cruz, Guaymallén" }
         access: tickets
         choirs: [efren-jurado, jaboneria, vozeres, ciudad-mendoza, cantapueblo]
+        photos:
+          - file: dia12-vozeres.webp
+            caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+          - file: dia12-efren-jurado-1.webp
+            caption: { es: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Ecuador)", en: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Ecuador)", fr: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Équateur)" }
+          - file: dia12-efren-jurado-2.webp
+            caption: { es: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Ecuador)", en: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Ecuador)", fr: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Équateur)" }
+          - file: dia12-jaboneria-1.webp
+            caption: { es: "Grupo Vocal La Jabonería de Vieytes", en: "Grupo Vocal La Jabonería de Vieytes", fr: "Grupo Vocal La Jabonería de Vieytes" }
+          - file: dia12-jaboneria-2.webp
+            caption: { es: "Grupo Vocal La Jabonería de Vieytes", en: "Grupo Vocal La Jabonería de Vieytes", fr: "Grupo Vocal La Jabonería de Vieytes" }
+          - file: dia12-ciudad-mendoza.webp
+            caption: { es: "Coro de la Ciudad de Mendoza", en: "Coro de la Ciudad de Mendoza", fr: "Coro de la Ciudad de Mendoza" }
+          - file: dia12-cantapueblo.webp
+            caption: { es: "Coro Cantapueblo", en: "Coro Cantapueblo", fr: "Coro Cantapueblo" }
+        videos:
+          - file: dia12-jaboneria.mp4
+            poster: dia12-jaboneria-poster.webp
+            title: { es: "Grupo Vocal La Jabonería de Vieytes", en: "Grupo Vocal La Jabonería de Vieytes", fr: "Grupo Vocal La Jabonería de Vieytes" }
+          - file: dia12-vozeres.mp4
+            poster: dia12-vozeres-poster.webp
+            title: { es: "Vózeres Ensamble Vocal", en: "Vózeres Ensamble Vocal", fr: "Vózeres Ensamble Vocal" }
+          - file: dia12-efren-jurado-1.mp4
+            poster: dia12-efren-jurado-1-poster.webp
+            title: { es: "Coro Adultos Mayores IESS \"Efrén Jurado\"", en: "Coro Adultos Mayores IESS \"Efrén Jurado\"", fr: "Coro Adultos Mayores IESS \"Efrén Jurado\"" }
+          - file: dia12-efren-jurado-2.mp4
+            poster: dia12-efren-jurado-2-poster.webp
+            title: { es: "Coro Adultos Mayores IESS \"Efrén Jurado\"", en: "Coro Adultos Mayores IESS \"Efrén Jurado\"", fr: "Coro Adultos Mayores IESS \"Efrén Jurado\"" }
+          - file: dia12-ciudad-mendoza-1.mp4
+            poster: dia12-ciudad-mendoza-1-poster.webp
+            title: { es: "Coro de la Ciudad de Mendoza", en: "Coro de la Ciudad de Mendoza", fr: "Coro de la Ciudad de Mendoza" }
+          - file: dia12-ciudad-mendoza-2.mp4
+            poster: dia12-ciudad-mendoza-2-poster.webp
+            title: { es: "Coro de la Ciudad de Mendoza", en: "Coro de la Ciudad de Mendoza", fr: "Coro de la Ciudad de Mendoza" }
+          - file: dia12-cantapueblo.mp4
+            poster: dia12-cantapueblo-poster.webp
+            title: { es: "Coro Cantapueblo", en: "Coro Cantapueblo", fr: "Coro Cantapueblo" }
       - time: "21:00"
         title: { es: "Concierto por la Vida", en: "Concert for Life", fr: "Concert pour la Vie" }
         venue: { name: "Espacio Cultural Julio Le Parc", room: "Sala Tito Francia", address: "Av. Mitre esq. Godoy Cruz, Guaymallén" }
         access: tickets
         choirs: [abogados-neuquen, esloveno, aluen, colegio-central]
+        photos:
+          - file: dia12-abogados-neuquen-1.webp
+            caption: { es: "Coro del Colegio de Abogados y Procuradores del Neuquén", en: "Coro del Colegio de Abogados y Procuradores del Neuquén", fr: "Coro del Colegio de Abogados y Procuradores del Neuquén" }
+          - file: dia12-abogados-neuquen-2.webp
+            caption: { es: "Coro del Colegio de Abogados y Procuradores del Neuquén", en: "Coro del Colegio de Abogados y Procuradores del Neuquén", fr: "Coro del Colegio de Abogados y Procuradores del Neuquén" }
+          - file: dia12-abogados-neuquen-3.webp
+            caption: { es: "Coro del Colegio de Abogados y Procuradores del Neuquén", en: "Coro del Colegio de Abogados y Procuradores del Neuquén", fr: "Coro del Colegio de Abogados y Procuradores del Neuquén" }
+          - file: dia12-aluen-2.webp
+            caption: { es: "Vocal Femenino Aluen (Chubut)", en: "Vocal Femenino Aluen (Chubut)", fr: "Vocal Femenino Aluen (Chubut)" }
+          - file: dia12-aluen-1.webp
+            caption: { es: "Vocal Femenino Aluen (Chubut)", en: "Vocal Femenino Aluen (Chubut)", fr: "Vocal Femenino Aluen (Chubut)" }
+          - file: dia12-esloveno-1.webp
+            caption: { es: "Coro Esloveno de Mendoza", en: "Coro Esloveno de Mendoza", fr: "Coro Esloveno de Mendoza" }
+          - file: dia12-esloveno-2.webp
+            caption: { es: "Coro Esloveno de Mendoza", en: "Coro Esloveno de Mendoza", fr: "Coro Esloveno de Mendoza" }
+          - file: dia12-colegio-central-2.webp
+            caption: { es: "Coro del Colegio Universitario Central", en: "Coro del Colegio Universitario Central", fr: "Coro del Colegio Universitario Central" }
+          - file: dia12-colegio-central-1.webp
+            caption: { es: "Coro del Colegio Universitario Central", en: "Coro del Colegio Universitario Central", fr: "Coro del Colegio Universitario Central" }
+        videos:
+          - file: dia12-abogados-neuquen.mp4
+            poster: dia12-abogados-neuquen-poster.webp
+            title: { es: "Coro del Colegio de Abogados y Procuradores del Neuquén", en: "Coro del Colegio de Abogados y Procuradores del Neuquén", fr: "Coro del Colegio de Abogados y Procuradores del Neuquén" }
+          - file: dia12-aluen.mp4
+            poster: dia12-aluen-poster.webp
+            title: { es: "Vocal Femenino Aluen (Chubut)", en: "Vocal Femenino Aluen (Chubut)", fr: "Vocal Femenino Aluen (Chubut)" }
+          - file: dia12-esloveno.mp4
+            poster: dia12-esloveno-poster.webp
+            title: { es: "Coro Esloveno de Mendoza", en: "Coro Esloveno de Mendoza", fr: "Coro Esloveno de Mendoza" }
+          - file: dia12-colegio-central.mp4
+            poster: dia12-colegio-central-poster.webp
+            title: { es: "Coro del Colegio Universitario Central", en: "Coro del Colegio Universitario Central", fr: "Coro del Colegio Universitario Central" }
       - time: "21:00"
         title: { es: "Concierto por la Esperanza", en: "Concert for Hope", fr: "Concert pour l'Espoir" }
         venue: { name: "Iglesia de Jesucristo de los Santos de los Últimos Días", address: "Francisco de la Reta 394, San José, Guaymallén" }
         access: free
         choirs: [canto-vida-tucuman, nn-vocal, nacer-vocal, torrontes]
+        photos:
+          - file: dia12-canto-vida-tucuman-1.webp
+            caption: { es: "Coro Canto a la Vida (Tucumán)", en: "Coro Canto a la Vida (Tucumán)", fr: "Coro Canto a la Vida (Tucumán)" }
+          - file: dia12-canto-vida-tucuman-2.webp
+            caption: { es: "Coro Canto a la Vida (Tucumán)", en: "Coro Canto a la Vida (Tucumán)", fr: "Coro Canto a la Vida (Tucumán)" }
+          - file: dia12-nacer-vocal-1.webp
+            caption: { es: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", en: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", fr: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)" }
+          - file: dia12-nacer-vocal-2.webp
+            caption: { es: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", en: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", fr: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)" }
+          - file: dia12-nn-vocal-1.webp
+            caption: { es: "NN Vocal", en: "NN Vocal", fr: "NN Vocal" }
+          - file: dia12-nn-vocal-2.webp
+            caption: { es: "NN Vocal", en: "NN Vocal", fr: "NN Vocal" }
+          - file: dia12-torrontes-1.webp
+            caption: { es: "Coro Torrontes del Hospital Universitario", en: "Coro Torrontes del Hospital Universitario", fr: "Coro Torrontes del Hospital Universitario" }
+          - file: dia12-torrontes-2.webp
+            caption: { es: "Coro Torrontes del Hospital Universitario", en: "Coro Torrontes del Hospital Universitario", fr: "Coro Torrontes del Hospital Universitario" }
+        videos:
+          - file: dia12-canto-vida-tucuman.mp4
+            poster: dia12-canto-vida-tucuman-poster.webp
+            title: { es: "Coro Canto a la Vida (Tucumán)", en: "Coro Canto a la Vida (Tucumán)", fr: "Coro Canto a la Vida (Tucumán)" }
+          - file: dia12-nacer-vocal.mp4
+            poster: dia12-nacer-vocal-poster.webp
+            title: { es: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", en: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", fr: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)" }
+          - file: dia12-nn-vocal-1.mp4
+            poster: dia12-nn-vocal-1-poster.webp
+            title: { es: "NN Vocal", en: "NN Vocal", fr: "NN Vocal" }
+          - file: dia12-nn-vocal-2.mp4
+            poster: dia12-nn-vocal-2-poster.webp
+            title: { es: "NN Vocal", en: "NN Vocal", fr: "NN Vocal" }
+          - file: dia12-nn-vocal-3.mp4
+            poster: dia12-nn-vocal-3-poster.webp
+            title: { es: "NN Vocal", en: "NN Vocal", fr: "NN Vocal" }
+          - file: dia12-torrontes.mp4
+            poster: dia12-torrontes-poster.webp
+            title: { es: "Coro Torrontes del Hospital Universitario", en: "Coro Torrontes del Hospital Universitario", fr: "Coro Torrontes del Hospital Universitario" }
     photos: []
     videos: []
 
