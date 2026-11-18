@@ -488,8 +488,12 @@
   /* Fotos de a 3 por fila; la última fila incompleta queda centrada (ej. 3/3/2). */
   .edition-gallery { display: flex; flex-wrap: wrap; justify-content: center; }
   .edition-gallery.cols-3 .edition-photo { width: calc((100% - 2rem) / 3); }
+  /* Con 2 o 4 fotos van de a 2 por fila, pero del mismo tamaño que las de 3, centradas. */
+  .edition-gallery.cols-2 { width: calc((200% - 1rem) / 3); margin-left: auto; margin-right: auto; }
   .edition-gallery.cols-2 .edition-photo { width: calc((100% - 1rem) / 2); }
   .edition-photo { aspect-ratio: 4 / 3; border-radius: 18px; }
+  /* Foto destacada (featured: true en el YAML): sola en su fila, al 80 % del ancho y centrada. */
+  .edition-gallery .edition-photo.is-featured { width: 80%; margin: 0 10%; aspect-ratio: 3 / 2; }
 
   .edition-videos { gap: 1.2rem; }
   .edition-videos.cols-3 { grid-template-columns: repeat(3, 1fr); }
@@ -511,3 +515,6 @@
   .edition-choir-body { padding: 1.3rem 1.5rem 1.5rem; }
   .edition-choir h4 { font-size: 1.2rem; }
 }
+
+/* Foto destacada en celular: ocupa las dos columnas */
+.edition-gallery .edition-photo.is-featured { grid-column: 1 / -1; }

@@ -21,7 +21,7 @@
     {%- for photo in include.photos %}
     {%- assign cap = photo.caption[lang] %}
     {%- assign alt = cap | default: include.alt_base %}
-    <button type="button" class="edition-photo" data-group="{{ include.group }}"
+    <button type="button" class="edition-photo{% if photo.featured %} is-featured{% endif %}" data-group="{{ include.group }}"
             data-src="{{ '/assets/img/2026/' | append: photo.file | relative_url }}"
             data-alt="{{ alt | escape }}" data-caption="{{ cap | escape }}">
       <img loading="lazy" src="{{ '/assets/img/2026/' | append: photo.file | relative_url }}" alt="{{ alt | escape }}">

@@ -22,6 +22,7 @@
 #              fr: "Les chœurs au pied de l'Aconcagua"
 #
 #      (caption es opcional: si no lo querés, dejá solo "- file: ...")
+#      (para destacar una foto a todo el ancho, agregale  featured: true )
 #
 # VIDEOS
 #   - De YouTube: copiá el código del link (youtube.com/watch?v=ESTE_CODIGO)
@@ -31,7 +32,7 @@
 #   - Archivo propio (clips cortos, idealmente < 20 MB) en assets/video/2026/:
 #          - file: clip-cantata.mp4
 #            poster: clip-cantata-poster.webp   (opcional: imagen antes de dar play)
-#            (los videos verticales se recortan solos para verse del mismo tamaño que el resto)
+#            (cada video mantiene su orientación: todos los horizontales miden lo mismo y todos los verticales también)
 #
 # LOGOS DE APOYO: al final del archivo, lista  supporters  (instrucciones allí).
 #
@@ -49,25 +50,25 @@ ui:
     title: "Cantapueblo 2026"
     dates: "11 al 14 de noviembre"
     place: "Mendoza, Argentina"
-    intro: "Cuatro jornadas de conciertos reúnen a coros de Mendoza, Tucumán, Neuquén, Chubut y Buenos Aires, junto a agrupaciones de Ecuador y México. En esta página se presenta el programa completo; las fotografías y los videos se incorporarán durante y después del festival."
-    note: "Programa publicado por la organización: las novedades se anuncian en el <a href=\"https://www.instagram.com/cantapuebloargentina/\" target=\"_blank\" rel=\"noopener\">Instagram de Cantapueblo</a>."
+    intro: "Durante cuatro jornadas de conciertos, Cantapueblo reunió a coros de Mendoza, Tucumán, Neuquén, Chubut y Buenos Aires, junto a agrupaciones de Ecuador y México. En esta página está el programa completo, con las fotos y los videos de cada concierto, que se siguen incorporando."
+    note: "Más fotos y videos del festival en el <a href=\"https://www.instagram.com/cantapuebloargentina/\" target=\"_blank\" rel=\"noopener\">Instagram de Cantapueblo</a>."
     jump_choirs: "Los coros"
     choirs_title: "Los coros de 2026"
-    choirs_intro: "Estas son las agrupaciones corales que nos acompañan en la edición 2026."
+    choirs_intro: "Estas son las agrupaciones corales que nos acompañaron en la edición 2026."
     group_exterior: "Internacionales"
     group_provincias: "De otras provincias de Argentina"
     group_mendoza: "De Mendoza"
     conductor: "Dirección"
     program_title: "Programa de conciertos"
     month: "noviembre"
-    free: "Entrada libre y gratuita"
-    tickets: "Entradas por EntradaWeb"
-    tickets_hospital: "Entradas a la venta directamente en el Hospital Universitario"
+    free: "La entrada fue libre y gratuita"
+    tickets: "Las entradas se vendieron por EntradaWeb"
+    tickets_hospital: "Las entradas se vendieron directamente en el Hospital Universitario"
     anthem: "El Canto Grande: Himno oficial del festival"
     buy: "Comprar entradas"
     photos: "Fotos"
     videos: "Videos"
-    no_media: "Las fotografías y los videos de esta jornada se incorporarán durante y después del festival."
+    no_media: "Pronto se sumarán las fotos y los videos de esta jornada."
     highlights_title: "Lo mejor de la edición 2026"
     supporters_title: "Apoyan a Cantapueblo estas instituciones y empresas"
     close: "Cerrar"
@@ -78,25 +79,25 @@ ui:
     title: "Cantapueblo 2026"
     dates: "November 11 to 14"
     place: "Mendoza, Argentina"
-    intro: "Four days of concerts bring together choirs from Mendoza, Tucumán, Neuquén, Chubut and Buenos Aires, alongside ensembles from Ecuador and Mexico. This page presents the full festival programme; photographs and videos will be added during and after the festival."
-    note: "Programme published by the organization: updates are announced on <a href=\"https://www.instagram.com/cantapuebloargentina/\" target=\"_blank\" rel=\"noopener\">Cantapueblo's Instagram</a>."
+    intro: "Over four days of concerts, Cantapueblo brought together choirs from Mendoza, Tucumán, Neuquén, Chubut and Buenos Aires, alongside ensembles from Ecuador and Mexico. This page holds the full programme, with photos and videos from each concert, which are still being added."
+    note: "More photos and videos of the festival on <a href=\"https://www.instagram.com/cantapuebloargentina/\" target=\"_blank\" rel=\"noopener\">Cantapueblo's Instagram</a>."
     jump_choirs: "The choirs"
     choirs_title: "The 2026 choirs"
-    choirs_intro: "These are the choral ensembles joining us for the 2026 edition."
+    choirs_intro: "These are the choral ensembles that joined us for the 2026 edition."
     group_exterior: "International"
     group_provincias: "From other provinces of Argentina"
     group_mendoza: "From Mendoza"
     conductor: "Conductor"
     program_title: "Concert programme"
     month: "November"
-    free: "Free admission"
-    tickets: "Tickets on EntradaWeb"
-    tickets_hospital: "Tickets sold directly by the Hospital Universitario"
+    free: "Admission was free"
+    tickets: "Tickets were sold on EntradaWeb"
+    tickets_hospital: "Tickets were sold directly by the Hospital Universitario"
     anthem: "El Canto Grande: the festival's official anthem"
     buy: "Buy tickets"
     photos: "Photos"
     videos: "Videos"
-    no_media: "Photographs and videos from this day will be added during and after the festival."
+    no_media: "Photos and videos from this day will be added soon."
     highlights_title: "Highlights of the 2026 edition"
     supporters_title: "These institutions and companies support Cantapueblo"
     close: "Close"
@@ -107,25 +108,25 @@ ui:
     title: "Cantapueblo 2026"
     dates: "Du 11 au 14 novembre"
     place: "Mendoza, Argentine"
-    intro: "Quatre jours de concerts réunissent des chœurs de Mendoza, Tucumán, Neuquén, Chubut et Buenos Aires, ainsi que des ensembles d'Équateur et du Mexique. Cette page présente le programme complet du festival ; les photographies et les vidéos y seront ajoutées pendant et après le festival."
-    note: "Programme publié par l'organisation&nbsp;: les nouveautés sont annoncées sur l'<a href=\"https://www.instagram.com/cantapuebloargentina/\" target=\"_blank\" rel=\"noopener\">Instagram de Cantapueblo</a>."
+    intro: "Pendant quatre jours de concerts, Cantapueblo a réuni des chœurs de Mendoza, Tucumán, Neuquén, Chubut et Buenos Aires, ainsi que des ensembles d'Équateur et du Mexique. Cette page présente le programme complet, avec les photos et les vidéos de chaque concert, qui continuent d'être ajoutées."
+    note: "Plus de photos et de vidéos du festival sur l'<a href=\"https://www.instagram.com/cantapuebloargentina/\" target=\"_blank\" rel=\"noopener\">Instagram de Cantapueblo</a>."
     jump_choirs: "Les chœurs"
     choirs_title: "Les chœurs de 2026"
-    choirs_intro: "Voici les ensembles vocaux qui nous accompagnent pour l'édition 2026."
+    choirs_intro: "Voici les ensembles vocaux qui nous ont accompagnés pour l'édition 2026."
     group_exterior: "Internationaux"
     group_provincias: "D'autres provinces d'Argentine"
     group_mendoza: "De Mendoza"
     conductor: "Direction"
     program_title: "Programme des concerts"
     month: "novembre"
-    free: "Entrée libre et gratuite"
-    tickets: "Billets sur EntradaWeb"
-    tickets_hospital: "Billets vendus directement par l'Hôpital Universitaire"
+    free: "L'entrée était libre et gratuite"
+    tickets: "Les billets étaient vendus sur EntradaWeb"
+    tickets_hospital: "Les billets étaient vendus directement par l'Hôpital Universitaire"
     anthem: "El Canto Grande : hymne officiel du festival"
     buy: "Acheter des billets"
     photos: "Photos"
     videos: "Vidéos"
-    no_media: "Les photographies et les vidéos de cette journée seront ajoutées pendant et après le festival."
+    no_media: "Les photos et les vidéos de cette journée seront bientôt ajoutées."
     highlights_title: "Les temps forts de l'édition 2026"
     supporters_title: "Ces institutions et entreprises soutiennent Cantapueblo"
     close: "Fermer"
@@ -390,11 +391,11 @@ days:
         access: tickets
         choirs: [abogados-neuquen, esloveno, aluen, colegio-central]
         photos:
+          - file: dia12-gustavo-aguilera.webp
+            caption: { es: "Gustavo Aguilera", en: "Gustavo Aguilera", fr: "Gustavo Aguilera" }
           - file: dia12-abogados-neuquen-1.webp
             caption: { es: "Coro del Colegio de Abogados y Procuradores del Neuquén", en: "Coro del Colegio de Abogados y Procuradores del Neuquén", fr: "Coro del Colegio de Abogados y Procuradores del Neuquén" }
           - file: dia12-abogados-neuquen-2.webp
-            caption: { es: "Coro del Colegio de Abogados y Procuradores del Neuquén", en: "Coro del Colegio de Abogados y Procuradores del Neuquén", fr: "Coro del Colegio de Abogados y Procuradores del Neuquén" }
-          - file: dia12-abogados-neuquen-3.webp
             caption: { es: "Coro del Colegio de Abogados y Procuradores del Neuquén", en: "Coro del Colegio de Abogados y Procuradores del Neuquén", fr: "Coro del Colegio de Abogados y Procuradores del Neuquén" }
           - file: dia12-aluen-2.webp
             caption: { es: "Vocal Femenino Aluen (Chubut)", en: "Vocal Femenino Aluen (Chubut)", fr: "Vocal Femenino Aluen (Chubut)" }
@@ -405,8 +406,6 @@ days:
           - file: dia12-esloveno-2.webp
             caption: { es: "Coro Esloveno de Mendoza", en: "Coro Esloveno de Mendoza", fr: "Coro Esloveno de Mendoza" }
           - file: dia12-colegio-central-2.webp
-            caption: { es: "Coro del Colegio Universitario Central", en: "Coro del Colegio Universitario Central", fr: "Coro del Colegio Universitario Central" }
-          - file: dia12-colegio-central-1.webp
             caption: { es: "Coro del Colegio Universitario Central", en: "Coro del Colegio Universitario Central", fr: "Coro del Colegio Universitario Central" }
         videos:
           - file: dia12-abogados-neuquen.mp4
@@ -435,8 +434,6 @@ days:
             caption: { es: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", en: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", fr: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)" }
           - file: dia12-nacer-vocal-2.webp
             caption: { es: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", en: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", fr: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)" }
-          - file: dia12-nn-vocal-1.webp
-            caption: { es: "NN Vocal", en: "NN Vocal", fr: "NN Vocal" }
           - file: dia12-nn-vocal-2.webp
             caption: { es: "NN Vocal", en: "NN Vocal", fr: "NN Vocal" }
           - file: dia12-torrontes-1.webp
@@ -453,15 +450,12 @@ days:
           - file: dia12-nn-vocal-1.mp4
             poster: dia12-nn-vocal-1-poster.webp
             title: { es: "NN Vocal", en: "NN Vocal", fr: "NN Vocal" }
-          - file: dia12-nn-vocal-2.mp4
-            poster: dia12-nn-vocal-2-poster.webp
-            title: { es: "NN Vocal", en: "NN Vocal", fr: "NN Vocal" }
-          - file: dia12-nn-vocal-3.mp4
-            poster: dia12-nn-vocal-3-poster.webp
-            title: { es: "NN Vocal", en: "NN Vocal", fr: "NN Vocal" }
           - file: dia12-torrontes.mp4
             poster: dia12-torrontes-poster.webp
             title: { es: "Coro Torrontes del Hospital Universitario", en: "Coro Torrontes del Hospital Universitario", fr: "Coro Torrontes del Hospital Universitario" }
+          - file: dia12-nn-vocal-3.mp4
+            poster: dia12-nn-vocal-3-poster.webp
+            title: { es: "NN Vocal", en: "NN Vocal", fr: "NN Vocal" }
     photos: []
     videos: []
 
@@ -471,25 +465,88 @@ days:
     events:
       - time: "12:30"
         title: { es: "Concierto en las Alturas", en: "Concert in the Heights", fr: "Concert dans les Hauteurs" }
-        subtitle: { es: "Los coros cantan al pie del Aconcagua", en: "The choirs sing at the foot of Aconcagua", fr: "Les chœurs chantent au pied de l'Aconcagua" }
+        subtitle: { es: "Los coros cantaron al pie del Aconcagua", en: "The choirs sang at the foot of Aconcagua", fr: "Les chœurs ont chanté au pied de l'Aconcagua" }
         choirs: [canto-vida-tucuman, efren-jurado, aluen, abogados-neuquen, nacer-vocal, vozeres]
+        photos:
+          - file: dia13-alturas-vozeres.webp
+            caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+          - file: dia13-alturas-vozeres-efren.webp
+            caption: { es: "Vózeres Ensamble Vocal y Coro Adultos Mayores IESS \"Efrén Jurado\"", en: "Vózeres Ensamble Vocal and Coro Adultos Mayores IESS \"Efrén Jurado\"", fr: "Vózeres Ensamble Vocal et Coro Adultos Mayores IESS \"Efrén Jurado\"" }
+          - file: dia13-alturas-efren-jurado.webp
+            caption: { es: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Ecuador)", en: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Ecuador)", fr: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Équateur)" }
+          - file: dia13-alturas-canto-vida.webp
+            caption: { es: "Coro Canto a la Vida (Tucumán)", en: "Coro Canto a la Vida (Tucumán)", fr: "Coro Canto a la Vida (Tucumán)" }
+          - file: dia13-alturas-aluen.webp
+            caption: { es: "Vocal Femenino Aluen (Chubut)", en: "Vocal Femenino Aluen (Chubut)", fr: "Vocal Femenino Aluen (Chubut)" }
+          - file: dia13-alturas-nacer-vocal.webp
+            caption: { es: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", en: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", fr: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)" }
+          - file: dia13-alturas-todos.webp
+            featured: true
+            caption: { es: "Todos los coros al pie del Aconcagua", en: "All the choirs at the foot of Aconcagua", fr: "Tous les chœurs au pied de l'Aconcagua" }
       - time: "21:00"
         title: { es: "Concierto por la Paz", en: "Concert for Peace", fr: "Concert pour la Paix" }
         venue: { name: "Teatro Independencia", address: "Chile y Espejo, Ciudad" }
         access: tickets
         ticket_url: "https://www.entradaweb.com.ar/evento/ed5b1d9e/step/1"
         choirs: [aluen, canto-coral-argentino, abogados-neuquen, vozeres, universidad-aconcagua]
+        photos:
+          - file: dia13-paz-vozeres.webp
+            caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+          - file: dia13-paz-aluen.webp
+            caption: { es: "Vocal Femenino Aluen (Chubut)", en: "Vocal Femenino Aluen (Chubut)", fr: "Vocal Femenino Aluen (Chubut)" }
+          - file: dia13-paz-canto-coral-argentino.webp
+            caption: { es: "Canto Coral Argentino", en: "Canto Coral Argentino", fr: "Canto Coral Argentino" }
+          - file: dia13-paz-abogados-neuquen.webp
+            caption: { es: "Coro del Colegio de Abogados y Procuradores del Neuquén", en: "Coro del Colegio de Abogados y Procuradores del Neuquén", fr: "Coro del Colegio de Abogados y Procuradores del Neuquén" }
+          - file: dia13-paz-director-aconcagua.webp
+            caption: { es: "Ricardo Portillo, director del Coro de la Universidad del Aconcagua", en: "Ricardo Portillo, conductor of Coro de la Universidad del Aconcagua", fr: "Ricardo Portillo, chef du Coro de la Universidad del Aconcagua" }
+          - file: dia13-paz-aconcagua-1.webp
+            caption: { es: "Coro de la Universidad del Aconcagua", en: "Coro de la Universidad del Aconcagua", fr: "Coro de la Universidad del Aconcagua" }
+          - file: dia13-paz-aconcagua-2.webp
+            caption: { es: "Coro de la Universidad del Aconcagua", en: "Coro de la Universidad del Aconcagua", fr: "Coro de la Universidad del Aconcagua" }
+          - file: dia13-paz-aconcagua-3.webp
+            caption: { es: "Coro de la Universidad del Aconcagua", en: "Coro de la Universidad del Aconcagua", fr: "Coro de la Universidad del Aconcagua" }
+        videos:
+          - file: dia13-paz-vozeres.mp4
+            poster: dia13-paz-vozeres-poster.webp
+            title: { es: "Vózeres Ensamble Vocal", en: "Vózeres Ensamble Vocal", fr: "Vózeres Ensamble Vocal" }
+          - file: dia13-paz-aconcagua-1.mp4
+            poster: dia13-paz-aconcagua-1-poster.webp
+            title: { es: "Coro de la Universidad del Aconcagua", en: "Coro de la Universidad del Aconcagua", fr: "Coro de la Universidad del Aconcagua" }
+          - file: dia13-paz-aconcagua-2.mp4
+            poster: dia13-paz-aconcagua-2-poster.webp
+            title: { es: "Coro de la Universidad del Aconcagua", en: "Coro de la Universidad del Aconcagua", fr: "Coro de la Universidad del Aconcagua" }
       - time: "21:00"
         title: { es: "Concierto por la Democracia", en: "Concert for Democracy", fr: "Concert pour la Démocratie" }
         venue: { name: "Espacio Cultural Julio Le Parc", room: "Sala Armando Tejada Gómez", address: "Av. Mitre esq. Godoy Cruz, Guaymallén" }
         access: tickets
         choirs: [nacer-vocal, julian-aguirre, osep, ninos-malargue, hugo-cabrera]
+        photos:
+          - file: dia13-leparc-nacer-vocal.webp
+            caption: { es: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", en: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", fr: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)" }
+          - file: dia13-leparc-julian-aguirre.webp
+            caption: { es: "Coro Escuela Artística Julián Aguirre", en: "Coro Escuela Artística Julián Aguirre", fr: "Coro Escuela Artística Julián Aguirre" }
+          # Pendiente: falta el nombre de los coros de estas tres fotos (OSEP / Hugo Cabrera)
+          - file: dia13-leparc-coro-a-1.webp
+          - file: dia13-leparc-coro-a-2.webp
+          - file: dia13-leparc-coro-b.webp
+          # Caras difuminadas (menores)
+          - file: dia13-leparc-ninos-malargue.webp
+            caption: { es: "Coro de Niños de la Municipalidad de Malargüe", en: "Coro de Niños de la Municipalidad de Malargüe", fr: "Coro de Niños de la Municipalidad de Malargüe" }
       - time: "21:00"
         title: { es: "El Canto de los Grandes", en: "El Canto de los Grandes", fr: "El Canto de los Grandes" }
         venue: { name: "Auditorio Dr. Gustavo Kent, Hospital Universitario", address: "Paso de los Andes 3051, Ciudad" }
         access: hospital
-        note: { es: "Lo recaudado es a total beneficio de la Cooperadora del Hospital Universitario.", en: "All proceeds go to the Hospital Universitario's Cooperadora (support association).", fr: "Les recettes sont intégralement reversées à la Cooperadora de l'Hôpital Universitaire." }
+        note: { es: "Lo recaudado fue a total beneficio de la Cooperadora del Hospital Universitario.", en: "All proceeds went to the Hospital Universitario's Cooperadora (support association).", fr: "Les recettes ont été intégralement reversées à la Cooperadora de l'Hôpital Universitaire." }
         choirs: [canto-vida-mendoza, canto-vida-tucuman, efren-jurado, adultos-mayores-las-heras]
+        photos:
+          - file: dia13-hospital-efren-jurado.webp
+            caption: { es: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Ecuador)", en: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Ecuador)", fr: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Équateur)" }
+          - file: dia13-hospital-canto-vida-tucuman.webp
+            caption: { es: "Coro Canto a la Vida (Tucumán)", en: "Coro Canto a la Vida (Tucumán)", fr: "Coro Canto a la Vida (Tucumán)" }
+          # Pendiente: falta saber cuál es Canto a la Vida (Mendoza) y cuál Adultos Mayores de Las Heras
+          - file: dia13-hospital-mendoza-1.webp
+          - file: dia13-hospital-mendoza-2.webp
     photos: []
     videos: []
 
@@ -499,31 +556,69 @@ days:
     events:
       - time: "12:00"
         title: { es: "Cantata Callejera", en: "Street Cantata", fr: "Cantate de rue" }
-        subtitle: { es: "Los coros cantan en distintos espacios del centro de la ciudad de Mendoza", en: "The choirs sing in different spaces across downtown Mendoza", fr: "Les chœurs chantent dans différents lieux du centre-ville de Mendoza" }
+        subtitle: { es: "Los coros cantaron en distintos espacios del centro de la ciudad de Mendoza", en: "The choirs sang in different spaces across downtown Mendoza", fr: "Les chœurs ont chanté dans différents lieux du centre-ville de Mendoza" }
+        photos:
+          - file: dia14-cantata-efren-jurado.webp
+            caption: { es: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Ecuador)", en: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Ecuador)", fr: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Équateur)" }
+          - file: dia14-cantata-nacer-vocal.webp
+            caption: { es: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", en: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", fr: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)" }
+          # Caras de menores del público difuminadas en dia14-cantata-1 y dia14-cantata-2
+          - file: dia14-cantata-1.webp
+          - file: dia14-cantata-2.webp
+          - file: dia14-cantata-3.webp
       - time: "21:00"
         title: { es: "Concierto Final", en: "Final Concert", fr: "Concert final" }
+        photos:
+          - file: dia14-final-alejandro-scarpetta.webp
+            caption: { es: "Alejandro Scarpetta", en: "Alejandro Scarpetta", fr: "Alejandro Scarpetta" }
+          - file: dia14-final-alejandro-leon-repetur.webp
+            caption: { es: "Alejandro Scarpetta y León Repetur", en: "Alejandro Scarpetta and León Repetur", fr: "Alejandro Scarpetta et León Repetur" }
+          - file: dia14-final-nancy-ciccioli.webp
+            caption: { es: "Alejandro Scarpetta y Nancy Ciccioli, con su reconocimiento", en: "Alejandro Scarpetta and Nancy Ciccioli, with her award", fr: "Alejandro Scarpetta et Nancy Ciccioli, avec sa distinction" }
+          - file: dia14-final-vozeres.webp
+            caption: { es: "Vózeres Ensamble Vocal (Cancún, México)", en: "Vózeres Ensamble Vocal (Cancún, Mexico)", fr: "Vózeres Ensamble Vocal (Cancún, Mexique)" }
+          - file: dia14-final-efren-jurado.webp
+            caption: { es: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Ecuador)", en: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Ecuador)", fr: "Coro Adultos Mayores IESS \"Efrén Jurado\" (Guayaquil, Équateur)" }
+          - file: dia14-final-canto-vida-tucuman.webp
+            caption: { es: "Coro Canto a la Vida (Tucumán)", en: "Coro Canto a la Vida (Tucumán)", fr: "Coro Canto a la Vida (Tucumán)" }
+          - file: dia14-final-aluen.webp
+            caption: { es: "Vocal Femenino Aluen (Chubut)", en: "Vocal Femenino Aluen (Chubut)", fr: "Vocal Femenino Aluen (Chubut)" }
+          - file: dia14-final-nacer-vocal.webp
+            caption: { es: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", en: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)", fr: "Coro Polifónico Municipal Nacer Vocal (Buenos Aires)" }
+          # Caras difuminadas (menores)
+          - file: dia14-final-ninos-malargue.webp
+            caption: { es: "Coro de Niños de la Municipalidad de Malargüe", en: "Coro de Niños de la Municipalidad de Malargüe", fr: "Coro de Niños de la Municipalidad de Malargüe" }
+          - file: dia14-final-coro-cantapueblo.webp
+            caption: { es: "Coro Cantapueblo", en: "Coro Cantapueblo", fr: "Coro Cantapueblo" }
+          # Pendiente: falta el nombre de este coro
+          - file: dia14-final-coro-1.webp
+          - file: dia14-final-ensayo-masa-coral.webp
+            caption: { es: "Ensayo de la masa coral", en: "Mass choir rehearsal", fr: "Répétition du chœur d'ensemble" }
+          - file: dia14-final-masa-coral-concierto.webp
+            featured: true
+            caption: { es: "La masa coral en el Concierto Final", en: "The mass choir at the Final Concert", fr: "Le chœur d'ensemble au Concert final" }
         venue: { name: "Iglesia de los Jesuitas", address: "Colón y San Martín, Ciudad" }
         access: free
-        note: { es: "Participan coros de Argentina, Ecuador y México.", en: "Choirs from Argentina, Ecuador and Mexico take part.", fr: "Des chœurs d'Argentine, d'Équateur et du Mexique y participent." }
+        note: { es: "Participaron coros de Argentina, Ecuador y México.", en: "Choirs from Argentina, Ecuador and Mexico took part.", fr: "Des chœurs d'Argentine, d'Équateur et du Mexique y ont participé." }
         # Programa del concierto, en orden. Cada bloque puede tener coros (lista de ids)
         # y canciones (title, label opcional, by opcional).
         segments:
           - title: { es: "Coros solistas · una canción por coro", en: "Solo choirs · one song each", fr: "Chœurs solistes · une chanson par chœur" }
             choirs: [canto-vida-mendoza, akis, canto-vida-tucuman, adultos-mayores-las-heras, efren-jurado]
             songs:
-              - label: { es: "Todos cantan", en: "All sing", fr: "Tous chantent" }
+              - label: { es: "Cantaron todos", en: "All sang", fr: "Tous ont chanté" }
                 title: "Anhelo"
-                by: { es: "Dirige Carlos Villacres Velástegui, director de los coros de adultos mayores (Ecuador)", en: "Conducted by Carlos Villacres Velástegui, director of the older adults' choirs (Ecuador)", fr: "Sous la direction de Carlos Villacres Velástegui, directeur des chœurs d'adultes âgés (Équateur)" }
+                by: { es: "Dirigió Carlos Villacres Velástegui, director de los coros de adultos mayores (Ecuador)", en: "Conducted by Carlos Villacres Velástegui, director of the older adults' choirs (Ecuador)", fr: "Sous la direction de Carlos Villacres Velástegui, directeur des chœurs d'adultes âgés (Équateur)" }
           - title: { es: "Coros solistas · una canción por coro", en: "Solo choirs · one song each", fr: "Chœurs solistes · une chanson par chœur" }
             choirs: [ninos-malargue, aluen, canto-coral-argentino, abogados-neuquen, hugo-cabrera, nacer-vocal, cantapueblo, vozeres]
           - title: { es: "Canciones de masa coral", en: "Mass choir songs", fr: "Chants d'ensemble" }
             songs:
               - title: "El jilguerillo"
-                by: { es: "Dirige Edgard González Salzmann (México)", en: "Conducted by Edgard González Salzmann (Mexico)", fr: "Sous la direction d'Edgard González Salzmann (Mexique)" }
+                by: { es: "Dirigió Edgard González Salzmann (México)", en: "Conducted by Edgard González Salzmann (Mexico)", fr: "Sous la direction d'Edgard González Salzmann (Mexique)" }
               - title: "Los ojos del amor"
-                by: { es: "Dirige Nancy Ciccioli (Mendoza)", en: "Conducted by Nancy Ciccioli (Mendoza)", fr: "Sous la direction de Nancy Ciccioli (Mendoza)" }
+                by: { es: "Dirigió Nancy Ciccioli (Mendoza)", en: "Conducted by Nancy Ciccioli (Mendoza)", fr: "Sous la direction de Nancy Ciccioli (Mendoza)" }
               - title: "Canción con todos"
-                by: { es: "Dirige Nancy Ciccioli (Mendoza)", en: "Conducted by Nancy Ciccioli (Mendoza)", fr: "Sous la direction de Nancy Ciccioli (Mendoza)" }
+                by: { es: "Dirigió Nancy Ciccioli (Mendoza)", en: "Conducted by Nancy Ciccioli (Mendoza)", fr: "Sous la direction de Nancy Ciccioli (Mendoza)" }
     photos: []
     videos: []
 
